@@ -3,210 +3,257 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kanishka V — Software Engineer Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+<title>Kanishka V — Full-Stack Engineer | Generative AI Security & Java Ecosystems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 :root{
   --bg:#0a0a0f;
   --bg2:#12121a;
-  --bg3:#1a1a26;
-  --card:#16161f;
-  --border:#ffffff12;
-  --border2:#ffffff22;
-  --text:#e8e8f0;
-  --muted:#8888aa;
+  --bg3:#181824;
+  --card:#151522;
+  --card-hover:#1c1c2e;
+  --border:#ffffff14;
+  --border2:#ffffff26;
+  --text:#eaeaf2;
+  --muted:#9090aa;
   --accent:#7c6af7;
   --accent2:#a78bfa;
   --cyan:#38bdf8;
   --green:#4ade80;
   --pink:#f472b6;
   --orange:#fb923c;
+  --red:#f87171;
   --yellow:#facc15;
-  --grad:linear-gradient(135deg,#7c6af7,#38bdf8);
-  --grad2:linear-gradient(135deg,#f472b6,#fb923c);
+  --grad:linear-gradient(135deg,#7c6af7 0%,#38bdf8 100%);
+  --grad-secure:linear-gradient(135deg,#4ade80 0%,#38bdf8 100%);
+  --grad-danger:linear-gradient(135deg,#fb923c 0%,#f87171 100%);
   --font:'Space Grotesk',sans-serif;
   --mono:'Fira Code',monospace;
-  --radius:14px;
-  --radius-sm:8px;
+  --radius:16px;
+  --radius-sm:10px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--font);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
-::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all 0.3s ease}
-.nav-logo{font-family:var(--mono);font-size:1rem;font-weight:500;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,15,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all 0.3s ease}
+.nav-logo{font-family:var(--mono);font-size:1.05rem;font-weight:600;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.02em}
 .nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:var(--muted);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s;letter-spacing:.03em}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.875rem;font-weight:500;transition:color .2s;letter-spacing:.02em}
 .nav-links a:hover{color:var(--text)}
-.nav-cta{background:var(--grad);color:#fff;border:none;padding:.45rem 1.2rem;border-radius:20px;font-family:var(--font);font-size:.8rem;font-weight:600;cursor:pointer;transition:all 0.2s}
-.nav-cta:hover{opacity:.9;transform:translateY(-1px)}
+.nav-cta{background:var(--grad);color:#fff;border:none;padding:.5rem 1.3rem;border-radius:24px;font-family:var(--font);font-size:.82rem;font-weight:600;cursor:pointer;transition:all 0.2s}
+.nav-cta:hover{opacity:.92;transform:translateY(-1px);box-shadow:0 8px 20px rgba(124,106,247,0.35)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
-.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(10,10,15,.97);padding:1.5rem 2rem;border-bottom:1px solid var(--border);z-index:99;flex-direction:column;gap:1.2rem}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(10,10,15,.98);padding:1.5rem 2rem;border-bottom:1px solid var(--border);z-index:99;flex-direction:column;gap:1.2rem}
 .mobile-menu a{color:var(--muted);text-decoration:none;font-size:1rem;font-weight:500}
 .mobile-menu.open{display:flex}
 
 /* ── SECTIONS ── */
-section{position:relative;z-index:1;padding:80px 0}
-.container{max-width:1100px;margin:0 auto;padding:0 2rem}
+section{position:relative;z-index:1;padding:90px 0}
+.container{max-width:1120px;margin:0 auto;padding:0 2rem}
+.section-head{text-align:center;margin-bottom:3.5rem}
+.section-eye{font-family:var(--mono);font-size:.72rem;color:var(--accent2);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;justify-content:center;gap:.5rem}
+.section-title{font-size:clamp(1.9rem,3.2vw,2.6rem);font-weight:700;line-height:1.2}
+.section-title span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-line{width:54px;height:3px;background:var(--grad);border-radius:2px;margin:.85rem auto 0}
 
 /* ── HERO ── */
-#hero{min-height:100vh;display:flex;align-items:center;padding:100px 0 60px}
-.hero-inner{display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(124,106,247,.12);border:1px solid rgba(124,106,247,.3);color:var(--accent2);padding:.35rem 1rem;border-radius:20px;font-size:.75rem;font-weight:500;margin-bottom:1.5rem;font-family:var(--mono)}
-.hero-badge::before{content:'';width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+#hero{min-height:92vh;display:flex;align-items:center;padding:120px 0 60px}
+.hero-inner{display:grid;grid-template-columns:1.2fr 0.8fr;gap:4rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;background:rgba(124,106,247,.12);border:1px solid rgba(124,106,247,.3);color:var(--accent2);padding:.4rem 1.1rem;border-radius:20px;font-size:.78rem;font-weight:600;margin-bottom:1.5rem;font-family:var(--mono)}
+.hero-badge::before{content:'';width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-.hero-name{font-size:clamp(2.5rem,5vw,3.8rem);font-weight:700;line-height:1.15;margin-bottom:.75rem}
+.hero-name{font-size:clamp(2.5rem,4.5vw,3.6rem);font-weight:700;line-height:1.15;margin-bottom:.75rem;letter-spacing:-0.03em}
 .hero-name .highlight{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-tagline{font-family:var(--mono);font-size:1.1rem;color:var(--cyan);margin-bottom:1.25rem;min-height:1.5em}
+.hero-headline{font-family:var(--mono);font-size:1.02rem;color:var(--cyan);margin-bottom:1.25rem;line-height:1.5;font-weight:500}
 .cursor{animation:blink .7s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.hero-desc{color:var(--muted);font-size:.95rem;max-width:520px;margin-bottom:2rem;line-height:1.8}
-.hero-btns{display:flex;gap:0.75rem;flex-wrap:wrap}
-.btn-primary{background:var(--grad);color:#fff;padding:.7rem 1.6rem;border-radius:24px;font-family:var(--font);font-weight:600;font-size:.875rem;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:.5rem}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,106,247,.35)}
-.btn-outline{background:transparent;color:var(--text);padding:.7rem 1.6rem;border-radius:24px;font-family:var(--font);font-weight:600;font-size:.875rem;text-decoration:none;border:1px solid var(--border2);transition:.2s;display:inline-flex;align-items:center;gap:.5rem}
-.btn-outline:hover{background:var(--bg3);border-color:var(--accent)}
-.hero-socials{display:flex;gap:.75rem;margin-top:1.5rem}
-.social-btn{width:38px;height:38px;border-radius:10px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--muted);transition:.2s;font-size:1rem}
-.social-btn:hover{background:rgba(124,106,247,.15);border-color:var(--accent);color:var(--accent2)}
+.hero-desc{color:var(--muted);font-size:.98rem;max-width:560px;margin-bottom:2rem;line-height:1.8}
+.hero-btns{display:flex;gap:0.85rem;flex-wrap:wrap}
+.btn-primary{background:var(--grad);color:#fff;padding:.75rem 1.7rem;border-radius:28px;font-family:var(--font);font-weight:600;font-size:.875rem;text-decoration:none;transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(124,106,247,.35)}
+.btn-outline{background:transparent;color:var(--text);padding:.75rem 1.7rem;border-radius:28px;font-family:var(--font);font-weight:600;font-size:.875rem;text-decoration:none;border:1px solid var(--border2);transition:.2s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-outline:hover{background:var(--bg3);border-color:var(--accent);color:#fff}
+.hero-socials{display:flex;gap:.75rem;margin-top:1.75rem}
+.social-btn{width:40px;height:40px;border-radius:10px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--muted);transition:.2s;font-size:1rem}
+.social-btn:hover{background:rgba(124,106,247,.15);border-color:var(--accent);color:var(--accent2);transform:translateY(-2px)}
 
 /* ── PROFILE CARD ── */
-.profile-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;gap:1.2rem;box-shadow:0 20px 45px rgba(0,0,0,0.3)}
-.profile-card .glow{position:absolute;top:-80px;right:-80px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(124,106,247,.12),transparent 70%);pointer-events:none}
-.profile-img-wrap{width:200px;height:200px;border-radius:50%;overflow:hidden;border:3px solid var(--border2);background:#ffffff;display:flex;justify-content:center;align-items:center;position:relative;margin:0 auto;box-shadow:0 10px 25px rgba(0,0,0,0.15)}
-.profile-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.profile-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;gap:1.4rem;box-shadow:0 25px 50px rgba(0,0,0,0.35)}
+.profile-card .glow{position:absolute;top:-70px;right:-70px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(124,106,247,.22),transparent 70%);pointer-events:none}
+.profile-img-wrap{width:210px;height:210px;border-radius:50%;overflow:hidden;border:3px solid rgba(124,106,247,0.35);background:radial-gradient(circle,rgba(124,106,247,0.2) 0%,rgba(24,24,36,0.95) 75%);display:flex;justify-content:center;align-items:center;position:relative;margin:0 auto;box-shadow:0 12px 30px rgba(0,0,0,0.4)}
+.profile-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 15%;transform:scale(1.12);transition:transform 0.3s ease}
+.profile-img-wrap:hover img{transform:scale(1.18)}
 .profile-details{width:100%;text-align:center}
-.profile-title{font-size:1.15rem;font-weight:700;margin-bottom:.25rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.profile-subtitle{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-bottom:1rem}
-.profile-stats{display:flex;justify-content:space-around;border-top:1px solid var(--border);padding-top:1rem;width:100%}
+.profile-title{font-size:1.25rem;font-weight:700;margin-bottom:.25rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.profile-subtitle{font-family:var(--mono);font-size:.78rem;color:var(--cyan);margin-bottom:1.1rem;font-weight:500}
+.profile-stats{display:flex;justify-content:space-around;border-top:1px solid var(--border);padding-top:1.1rem;width:100%}
 .profile-stat{text-align:center}
-.profile-stat-val{font-size:1rem;font-weight:700;color:var(--text)}
-.profile-stat-lbl{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
-
-/* ── SECTION HEADER ── */
-.section-head{text-align:center;margin-bottom:3.5rem}
-.section-eye{font-family:var(--mono);font-size:.7rem;color:var(--accent2);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.6rem}
-.section-title{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;line-height:1.2}
-.section-title span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.section-line{width:48px;height:3px;background:var(--grad);border-radius:2px;margin:.8rem auto 0}
+.profile-stat-val{font-size:1.05rem;font-weight:700;color:var(--text)}
+.profile-stat-lbl{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
 
 /* ── ABOUT ME (3 CARDS) ── */
 .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem}
-.about-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;position:relative;overflow:hidden}
-.about-card-title{font-size:.95rem;font-weight:700;color:var(--accent2);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.about-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.85rem;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.about-card:hover{border-color:rgba(124,106,247,.35);transform:translateY(-2px)}
+.about-card-title{font-size:1rem;font-weight:700;color:var(--accent2);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
 .about-card-title span{font-size:1.25rem}
-.about-card p{color:var(--muted);font-size:.875rem;line-height:1.7}
-.about-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;justify-content:center}
-.about-chip{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:.35rem .9rem;font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.4rem}
-.about-chip .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.about-card p{color:var(--muted);font-size:.89rem;line-height:1.75}
+.about-chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;justify-content:center}
+.about-chip{background:var(--bg3);border:1px solid var(--border);border-radius:24px;padding:.4rem 1rem;font-size:.8rem;color:var(--text);display:flex;align-items:center;gap:.45rem;font-family:var(--mono)}
+.about-chip .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 
-/* ── SKILLS ── */
-.skills-wrapper{display:grid;grid-template-columns:1.2fr 0.8fr;gap:2.5rem}
-.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.skill-cat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem}
-.skill-cat-title{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--accent2);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
-.skill-list{list-style:none;display:flex;flex-direction:column;gap:.75rem}
-.skill-item{font-size:.9rem;color:var(--text);display:flex;align-items:center;gap:.6rem;font-family:var(--mono)}
-.skill-item::before{content:'⚡';font-size:.8rem}
+/* ── SKILLS OVERHAUL (FILTERABLE) ── */
+.skills-filter-nav{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-bottom:2.2rem}
+.skills-filter-btn{background:var(--bg3);border:1px solid var(--border);color:var(--muted);font-family:var(--font);font-size:.84rem;font-weight:600;padding:.5rem 1.2rem;border-radius:24px;cursor:pointer;transition:all .2s}
+.skills-filter-btn:hover{color:var(--text);border-color:var(--accent)}
+.skills-filter-btn.active{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(124,106,247,0.3)}
+.skills-matrix{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.skill-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem;transition:all .3s}
+.skill-box.hidden{display:none}
+.skill-box-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
+.skill-box-title{font-size:.92rem;font-weight:700;color:var(--accent2);display:flex;align-items:center;gap:.6rem;text-transform:uppercase;letter-spacing:.05em}
+.skill-box-badge{font-family:var(--mono);font-size:.68rem;padding:.2rem .6rem;border-radius:12px;background:var(--bg3);color:var(--cyan);border:1px solid var(--border)}
+.skill-tags-list{display:flex;flex-wrap:wrap;gap:.6rem}
+.skill-tag-pill{font-family:var(--mono);font-size:.82rem;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:.35rem .8rem;border-radius:8px;display:inline-flex;align-items:center;gap:.45rem;transition:border-color .2s}
+.skill-tag-pill:hover{border-color:var(--cyan);color:var(--cyan)}
+.skill-tag-pill::before{content:'⚡';font-size:.7rem;color:var(--accent2)}
 
-/* ── ROADMAP ── */
-.roadmap-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem}
-.roadmap-title{font-size:.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--cyan);margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
-.roadmap-list{list-style:none;display:flex;flex-direction:column;gap:.8rem}
-.roadmap-item{display:flex;align-items:center;gap:.75rem;font-size:.875rem}
-.roadmap-status{width:16px;height:16px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0}
-.status-done{background:rgba(74,222,128,.15);color:var(--green);border:1px solid rgba(74,222,128,.3)}
-.status-progress{background:rgba(251,146,60,.15);color:var(--orange);border:1px solid rgba(251,146,60,.3)}
-.status-planned{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)}
-.roadmap-text{color:var(--text)}
-.roadmap-item.planned .roadmap-text{color:var(--muted)}
+/* ── FEATURED PROJECT: SentinelMCP ── */
+.featured-card{background:linear-gradient(135deg,rgba(22,22,35,0.95),rgba(18,18,28,0.95));border:2px solid rgba(124,106,247,.45);border-radius:var(--radius);padding:2.6rem;box-shadow:0 25px 60px rgba(124,106,247,.18);margin-bottom:3.5rem;position:relative;overflow:hidden}
+.featured-badge{position:absolute;top:1.2rem;right:1.2rem;background:var(--grad);color:#fff;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.35rem .95rem;border-radius:20px;box-shadow:0 4px 15px rgba(124,106,247,0.4)}
+.featured-title{font-size:clamp(1.5rem,2.8vw,1.95rem);font-weight:700;margin-bottom:.6rem;color:#fff}
+.featured-subhead{font-family:var(--mono);font-size:.88rem;color:var(--cyan);margin-bottom:1.4rem}
+.featured-desc{color:var(--text);font-size:.96rem;line-height:1.8;margin-bottom:1.8rem}
+.featured-desc strong{color:var(--cyan)}
 
-/* ── FEATURED PROJECT ── */
-.featured-card{background:var(--card);border:2px solid rgba(124,106,247,.35);border-radius:var(--radius);padding:2.5rem;box-shadow:0 20px 50px rgba(124,106,247,.15);margin-bottom:3rem;position:relative;overflow:hidden}
-.featured-badge{position:absolute;top:1rem;right:1rem;background:var(--grad);color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.3rem .8rem;border-radius:20px}
-.featured-title{font-size:1.6rem;font-weight:700;margin-bottom:1rem;color:var(--text)}
-.featured-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:2.5rem;align-items:start}
-.featured-desc{color:var(--muted);font-size:.95rem;line-height:1.8;margin-bottom:1.5rem}
-.featured-sec-title{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--accent2);margin-bottom:.5rem}
-.arch-flow{font-family:var(--mono);font-size:.72rem;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;margin-bottom:1.5rem;color:var(--cyan);white-space:nowrap;overflow-x:auto}
-.featured-stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
-.stack-tag{font-family:var(--mono);font-size:.72rem;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:.2rem .65rem;border-radius:6px}
-.featured-bullets{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem}
-.featured-bullet{font-size:.875rem;color:var(--muted);display:flex;align-items:start;gap:.5rem}
-.featured-bullet::before{content:'✔';color:var(--green);font-weight:700;font-size:.85rem}
-.featured-info-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.2rem}
-.featured-info-box p{font-size:.85rem;color:var(--muted);line-height:1.6;margin-bottom:1rem}
-.featured-info-box p:last-child{margin-bottom:0}
-.featured-links{display:flex;gap:1rem;margin-top:1.5rem}
-.btn-repo{background:var(--bg3);color:var(--text);border:1px solid var(--border2);padding:.6rem 1.2rem;border-radius:20px;font-size:.8rem;font-weight:600;text-decoration:none;transition:.2s;display:inline-flex;align-items:center;gap:.4rem}
-.btn-repo:hover{border-color:var(--accent);background:rgba(124,106,247,.1)}
+/* Performance Validation Matrix */
+.validation-matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+.val-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.1rem;text-align:center;position:relative}
+.val-num{font-size:1.6rem;font-weight:700;line-height:1;margin-bottom:.35rem}
+.val-num.green{color:var(--green)}
+.val-num.cyan{color:var(--cyan)}
+.val-num.pink{color:var(--pink)}
+.val-num.accent{color:var(--accent2)}
+.val-label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;line-height:1.3}
+
+/* Tech Stack tags */
+.featured-stack{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.8rem}
+.stack-tag{font-family:var(--mono);font-size:.75rem;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:.3rem .8rem;border-radius:6px}
+
+/* Interactive Architecture Component */
+.arch-container{background:rgba(10,10,15,0.7);border:1px solid var(--border2);border-radius:var(--radius);padding:1.8rem;margin-bottom:2rem}
+.arch-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
+.arch-title{font-size:.9rem;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:.08em;display:flex;align-items:center;gap:.5rem}
+.arch-sim-btns{display:flex;gap:.6rem;flex-wrap:wrap}
+.arch-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text);font-family:var(--mono);font-size:.72rem;font-weight:600;padding:.35rem .9rem;border-radius:18px;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
+.arch-btn.safe:hover{border-color:var(--green);color:var(--green);background:rgba(74,222,128,0.1)}
+.arch-btn.attack:hover{border-color:var(--red);color:var(--red);background:rgba(248,113,113,0.1)}
+.arch-btn.reset:hover{border-color:var(--muted);color:#fff}
+
+.arch-flow-diagram{display:grid;grid-template-columns:1fr auto 1fr auto 1.4fr auto 1.2fr;align-items:center;gap:.6rem;overflow-x:auto;padding:.5rem 0 1rem}
+.arch-box{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;text-align:center;min-width:130px;transition:all .3s}
+.arch-box.active{border-color:var(--cyan);box-shadow:0 0 18px rgba(56,189,248,0.35);transform:scale(1.03)}
+.arch-box.threat{border-color:var(--red);box-shadow:0 0 20px rgba(248,113,113,0.45);transform:scale(1.03)}
+.arch-box.clean{border-color:var(--green);box-shadow:0 0 20px rgba(74,222,128,0.45);transform:scale(1.03)}
+.arch-box-icon{font-size:1.5rem;margin-bottom:.3rem}
+.arch-box-name{font-size:.8rem;font-weight:700;color:var(--text);margin-bottom:.2rem}
+.arch-box-desc{font-size:.65rem;color:var(--muted);line-height:1.3}
+
+.arch-arrow{color:var(--muted);font-family:var(--mono);font-size:1.1rem;display:flex;flex-direction:column;align-items:center;gap:2px}
+.arch-arrow span{font-size:.6rem;color:var(--cyan);text-transform:uppercase}
+
+.arch-split-col{display:flex;flex-direction:column;gap:.75rem;min-width:160px}
+.arch-box.branch{padding:.75rem;text-align:left;position:relative}
+.arch-box.branch.safe-branch{border-left:3px solid var(--green)}
+.arch-box.branch.sandbox-branch{border-left:3px solid var(--red)}
+.branch-status{font-family:var(--mono);font-size:.62rem;font-weight:700;margin-bottom:2px}
+.branch-status.safe-text{color:var(--green)}
+.branch-status.sand-text{color:var(--red)}
+
+.arch-live-log{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.8rem 1rem;font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-top:1rem;display:flex;align-items:center;gap:.6rem;overflow-x:auto}
+.log-cursor{color:var(--green);font-weight:700}
+#log-text{color:var(--text)}
+
+.featured-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-repo{background:var(--bg3);color:var(--text);border:1px solid var(--border2);padding:.65rem 1.4rem;border-radius:24px;font-size:.82rem;font-weight:600;text-decoration:none;transition:.2s;display:inline-flex;align-items:center;gap:.45rem}
+.btn-repo:hover{border-color:var(--accent);background:rgba(124,106,247,.15);color:#fff}
+.btn-case-study{background:var(--grad);color:#fff;border:none;padding:.65rem 1.4rem;border-radius:24px;font-size:.82rem;font-weight:700;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:.45rem;font-family:var(--font)}
+.btn-case-study:hover{opacity:.92;transform:translateY(-1px);box-shadow:0 8px 25px rgba(124,106,247,.3)}
 
 /* ── OTHER PROJECTS ── */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem}
-.project-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:transform .2s,border-color .2s;display:flex;flex-direction:column}
-.project-card:hover{transform:translateY(-3px);border-color:rgba(124,106,247,.3)}
-.proj-title{font-size:.95rem;font-weight:700;margin-bottom:.5rem;line-height:1.3}
-.proj-desc{color:var(--muted);font-size:.82rem;line-height:1.6;margin-bottom:1.2rem;flex-grow:1}
-.proj-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem}
-.proj-tag{font-family:var(--mono);font-size:.65rem;background:rgba(255,255,255,.05);color:var(--muted);padding:.15rem .5rem;border-radius:4px;border:1px solid var(--border)}
-.view-details-btn{font-size:.8rem;font-weight:600;color:var(--accent2);text-decoration:none;display:inline-flex;align-items:center;gap:.25rem;cursor:pointer;transition:color .2s;background:transparent;border:none;font-family:var(--font);align-self:flex-start}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.8rem;transition:transform .2s,border-color .2s;display:flex;flex-direction:column}
+.project-card:hover{transform:translateY(-3px);border-color:rgba(124,106,247,.35)}
+.proj-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem}
+.proj-title{font-size:1.05rem;font-weight:700;line-height:1.35;color:var(--text)}
+.proj-year{font-family:var(--mono);font-size:.7rem;color:var(--cyan);background:rgba(56,189,248,.1);padding:.15rem .5rem;border-radius:4px;border:1px solid rgba(56,189,248,.2)}
+.proj-desc{color:var(--muted);font-size:.85rem;line-height:1.7;margin-bottom:1.3rem;flex-grow:1}
+.proj-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.4rem}
+.proj-tag{font-family:var(--mono);font-size:.68rem;background:var(--bg3);color:var(--muted);padding:.2rem .55rem;border-radius:5px;border:1px solid var(--border)}
+.proj-card-actions{display:flex;justify-content:space-between;align-items:center;margin-top:auto;border-top:1px solid var(--border);padding-top:1rem}
+.view-details-btn{font-size:.82rem;font-weight:600;color:var(--accent2);text-decoration:none;display:inline-flex;align-items:center;gap:.3rem;cursor:pointer;transition:color .2s;background:transparent;border:none;font-family:var(--font)}
 .view-details-btn:hover{color:var(--cyan)}
+.proj-links-sm{display:flex;gap:.6rem}
+.proj-link-icon{color:var(--muted);font-size:.9rem;text-decoration:none;transition:color .2s}
+.proj-link-icon:hover{color:var(--cyan)}
 
-/* ── EXPERIENCE ── */
+/* ── TIMELINE (EXPERIENCE & EDUCATION) ── */
 #experience{background:linear-gradient(to bottom,var(--bg),var(--bg2),var(--bg))}
-.timeline{position:relative;padding-left:2rem;max-width:800px;margin:0 auto}
+.timeline{position:relative;padding-left:2rem;max-width:850px;margin:0 auto}
 .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),var(--cyan),transparent)}
-.tl-item{position:relative;padding:0 0 2rem 2rem}
-.tl-dot{position:absolute;left:-2.45rem;top:.3rem;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
-.tl-meta{font-family:var(--mono);font-size:.7rem;color:var(--accent2);margin-bottom:.4rem;letter-spacing:.05em}
-.tl-title{font-size:1.05rem;font-weight:700;margin-bottom:.25rem}
-.tl-sub{font-size:.82rem;color:var(--cyan);margin-bottom:.7rem}
-.tl-body{color:var(--muted);font-size:.85rem;line-height:1.8}
+.tl-item{position:relative;padding:0 0 2.5rem 2rem}
+.tl-dot{position:absolute;left:-2.45rem;top:.3rem;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 10px var(--accent)}
+.tl-meta{font-family:var(--mono);font-size:.72rem;color:var(--accent2);margin-bottom:.4rem;letter-spacing:.05em}
+.tl-title{font-size:1.15rem;font-weight:700;margin-bottom:.25rem}
+.tl-sub{font-size:.86rem;color:var(--cyan);margin-bottom:.75rem;font-weight:500}
+.tl-body{color:var(--muted);font-size:.88rem;line-height:1.8}
 .tl-body ul{padding-left:1.2rem}
-.tl-body ul li{margin-bottom:.4rem}
+.tl-body ul li{margin-bottom:.45rem}
+.tl-body ul li strong{color:var(--text)}
 
 /* ── PROBLEM SOLVING ── */
 .ps-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
 .ps-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:2rem;display:grid;grid-template-columns:1.2fr 0.8fr;gap:1.5rem}
-.ps-stat-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.2rem;text-align:center;display:flex;flex-direction:column;justify-content:center}
-.ps-stat-val{font-size:2rem;font-weight:700;color:var(--cyan);line-height:1}
-.ps-stat-lbl{font-size:.7rem;color:var(--muted);text-transform:uppercase;margin-top:.4rem;letter-spacing:.05em}
+.ps-stat-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.4rem;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.ps-stat-val{font-size:2.4rem;font-weight:700;color:var(--cyan);line-height:1}
+.ps-stat-lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;margin-top:.45rem;letter-spacing:.06em}
 .ps-info{display:flex;flex-direction:column;gap:1rem}
 .ps-info-item h4{font-size:.72rem;text-transform:uppercase;color:var(--muted);letter-spacing:.05em;margin-bottom:.2rem}
 .ps-info-item p{font-size:.9rem;color:var(--text);font-family:var(--font)}
-.ps-topic-grid{display:flex;flex-wrap:wrap;gap:.4rem}
-.ps-topic-badge{font-family:var(--mono);font-size:.72rem;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:.2rem .6rem;border-radius:6px}
+.ps-topic-grid{display:flex;flex-wrap:wrap;gap:.45rem}
+.ps-topic-badge{font-family:var(--mono);font-size:.75rem;background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:.25rem .65rem;border-radius:6px}
 
-/* ── ACHIEVEMENTS ── */
-#achievements{background:linear-gradient(to bottom,var(--bg),var(--bg2),var(--bg))}
-.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}
-.ach-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;position:relative}
-.ach-emoji{font-size:2rem;margin-bottom:.5rem;display:block}
-.ach-title{font-size:.9rem;font-weight:700;margin-bottom:.4rem;line-height:1.4}
-.ach-detail{font-size:.75rem;color:var(--muted);line-height:1.6}
+/* ── CREDENTIALS & CERTIFICATES ── */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.cert-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.2rem 1.4rem;display:flex;align-items:center;gap:1.1rem;transition:border-color .2s}
+.cert-card:hover{border-color:var(--accent)}
+.cert-icon{font-size:1.4rem;background:rgba(56,189,248,.1);color:var(--cyan);width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cert-info{flex-grow:1}
+.cert-name{font-size:.88rem;font-weight:600;line-height:1.35;color:var(--text)}
+.cert-org{font-size:.72rem;color:var(--muted);margin-top:.2rem}
+.cert-badge{font-family:var(--mono);font-size:.65rem;color:var(--green);background:rgba(74,222,128,.1);padding:.15rem .45rem;border-radius:4px;display:inline-block;margin-top:.3rem}
 
-/* ── COMPACT LEARNING (CERTIFICATES) ── */
-.learning-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
-.learning-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem}
-.learning-icon{font-size:1.2rem;background:rgba(56,189,248,.1);color:var(--cyan);width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.learning-info{flex-grow:1}
-.learning-name{font-size:.82rem;font-weight:600;line-height:1.3;color:var(--text)}
-.learning-org{font-size:.7rem;color:var(--muted);margin-top:.15rem}
-.learning-link{font-family:var(--mono);font-size:.68rem;color:var(--accent2);text-decoration:none;flex-shrink:0;cursor:pointer}
-.learning-link:hover{text-decoration:underline}
+/* ── ACTIVITIES GRID ── */
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2rem}
+.ach-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem;text-align:left;position:relative}
+.ach-emoji{font-size:1.8rem;margin-bottom:.6rem;display:block}
+.ach-title{font-size:.95rem;font-weight:700;margin-bottom:.4rem;line-height:1.4}
+.ach-detail{font-size:.8rem;color:var(--muted);line-height:1.6}
 
 /* ── CONTACT ── */
 .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:start;text-align:left}
 .contact-info{display:flex;flex-direction:column;gap:1.5rem}
 .contact-desc{color:var(--muted);font-size:.95rem;line-height:1.8}
-.open-to-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem}
-.open-to-title{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--green);margin-bottom:.75rem;display:flex;align-items:center;gap:.4rem}
-.open-to-title::before{content:'';width:8px;height:8px;background:var(--green);border-radius:50%}
+.open-to-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem}
+.open-to-title{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:.4rem}
 .open-to-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
 .open-to-item{font-size:.875rem;color:var(--text);display:flex;align-items:center;gap:.5rem}
 .open-to-item::before{content:'✔';color:var(--green);font-weight:700}
@@ -222,50 +269,49 @@ section{position:relative;z-index:1;padding:80px 0}
 .form-group label{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted)}
 .form-group input,.form-group textarea{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.75rem 0.95rem;color:var(--text);font-family:var(--font);font-size:0.85rem;transition:border-color 0.25s,box-shadow 0.25s}
 .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 10px rgba(124,106,247,.15)}
-.submit-btn{background:var(--grad);color:#fff;border:none;padding:0.8rem;border-radius:24px;font-family:var(--font);font-weight:700;font-size:0.875rem;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;margin-top:0.4rem;display:flex;justify-content:center;align-items:center;gap:0.5rem}
+.submit-btn{background:var(--grad);color:#fff;border:none;padding:0.85rem;border-radius:24px;font-family:var(--font);font-weight:700;font-size:.875rem;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;margin-top:0.4rem;display:flex;justify-content:center;align-items:center;gap:0.5rem}
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(124,106,247,.3)}
 
 /* ── FOOTER ── */
-footer{padding:2.5rem;text-align:center;border-top:1px solid var(--border);color:var(--muted);font-size:.78rem;line-height:1.9}
+footer{padding:2.5rem;text-align:center;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem;line-height:1.9}
 footer p:first-child{color:var(--text);font-weight:500;margin-bottom:.2rem}
 
-/* ── DETAILS MODAL ── */
-.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,15,0.95);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:1rem}
+/* ── MODALS ── */
+.modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,15,0.95);backdrop-filter:blur(10px);z-index:1000;display:none;align-items:center;justify-content:center;padding:1.5rem}
 .modal-overlay.open{display:flex}
-.modal-content{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);max-width:600px;width:100%;padding:2rem;position:relative;box-shadow:0 20px 50px rgba(0,0,0,0.5);max-height:90vh;overflow-y:auto;text-align:left}
-.modal-close{position:absolute;top:1rem;right:1.2rem;background:transparent;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer;transition:color 0.2s}
+.modal-content{background:var(--card);border:1px solid var(--border2);border-radius:var(--radius);max-width:620px;width:100%;padding:2.2rem;position:relative;box-shadow:0 25px 60px rgba(0,0,0,0.6);max-height:90vh;overflow-y:auto;text-align:left}
+.modal-content.wide{max-width:850px}
+.modal-close{position:absolute;top:1.2rem;right:1.3rem;background:transparent;border:none;color:var(--muted);font-size:1.6rem;cursor:pointer;transition:color 0.2s}
 .modal-close:hover{color:var(--text)}
-.modal-title{font-size:1.4rem;font-weight:700;margin-bottom:1.5rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.modal-section{margin-bottom:1.2rem}
-.modal-section h4{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--accent2);margin-bottom:0.3rem}
-.modal-section p, .modal-section ul{color:var(--muted);font-size:0.875rem;line-height:1.6}
-.modal-content.wide{max-width:800px}
+.modal-title{font-size:1.45rem;font-weight:700;margin-bottom:1.4rem;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.modal-section{margin-bottom:1.3rem}
+.modal-section h4{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--cyan);margin-bottom:0.4rem}
+.modal-section p, .modal-section ul{color:var(--muted);font-size:0.88rem;line-height:1.65}
+.modal-section ul{padding-left:1.2rem}
 .cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1rem}
 .cs-col{display:flex;flex-direction:column;gap:1.2rem}
-.cs-tree{font-family:var(--mono);font-size:.78rem;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;color:var(--text);line-height:1.45;white-space:pre;overflow-x:auto}
-.cs-api-list{display:flex;flex-direction:column;gap:.75rem}
-.cs-api-item{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:.6rem .8rem;font-family:var(--mono);font-size:.75rem;display:flex;justify-content:space-between;align-items:center}
-.cs-api-method{font-weight:700;padding:.15rem .4rem;border-radius:4px;font-size:.65rem;color:#fff}
-.cs-api-method.post{background:#10b981}
-.cs-api-method.get{background:#3b82f6}
-.cs-api-codes{font-size:.7rem;color:var(--muted);text-align:right}
+.cs-tree{font-family:var(--mono);font-size:.76rem;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem;color:var(--text);line-height:1.5;white-space:pre;overflow-x:auto}
 .cs-choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:.75rem}
-.cs-choice-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.2rem}
-.cs-choice-title{font-size:.82rem;font-weight:700;color:var(--accent2);margin-bottom:.4rem}
+.cs-choice-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-sm);padding:1.1rem}
+.cs-choice-title{font-size:.82rem;font-weight:700;color:var(--accent2);margin-bottom:.35rem}
 .cs-choice-reason{font-size:.75rem;color:var(--muted);line-height:1.55}
 
 /* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .hero-inner{grid-template-columns:1fr;gap:3rem}
+  .about-grid{grid-template-columns:1fr;gap:1.5rem}
+  .skills-matrix{grid-template-columns:1fr}
+  .validation-matrix{grid-template-columns:repeat(2,1fr)}
+  .ps-wrapper{grid-template-columns:1fr;gap:2rem}
+  .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .cs-grid{grid-template-columns:1fr}
+}
 @media(max-width:768px){
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
-  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
-  .about-grid{grid-template-columns:1fr;gap:1.5rem}
-  .skills-wrapper{grid-template-columns:1fr;gap:2rem}
-  .skills-grid{grid-template-columns:1fr}
-  .featured-grid{grid-template-columns:1fr;gap:1.5rem}
-  .ps-wrapper{grid-template-columns:1fr;gap:2rem}
-  .ps-card{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .validation-matrix{grid-template-columns:1fr 1fr}
+  .arch-flow-diagram{grid-template-columns:1fr;gap:1rem}
+  .arch-arrow{transform:rotate(90deg);margin:0.5rem 0}
 }
 </style>
 </head>
@@ -280,7 +326,7 @@ footer p:first-child{color:var(--text);font-weight:500;margin-bottom:.2rem}
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#credentials">Credentials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get In Touch</button>
@@ -294,7 +340,7 @@ footer p:first-child{color:var(--text);font-weight:500;margin-bottom:.2rem}
   <a href="#skills" onclick="closeMenu()">Skills</a>
   <a href="#projects" onclick="closeMenu()">Projects</a>
   <a href="#experience" onclick="closeMenu()">Experience</a>
-  <a href="#achievements" onclick="closeMenu()">Achievements</a>
+  <a href="#credentials" onclick="closeMenu()">Credentials</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 
@@ -304,19 +350,19 @@ footer p:first-child{color:var(--text);font-weight:500;margin-bottom:.2rem}
     <div class="hero-inner">
       <div>
         <div class="hero-badge">
-          <span>✦ Available for Opportunities</span>
+          <span>✦ Full-Stack Engineer &amp; AI Security</span>
         </div>
         <h1 class="hero-name">
-          Hi, I'm<br><span class="highlight">Kanishka V</span>
+          Hi, I'm <span class="highlight">Kanishka V</span>
         </h1>
-        <div class="hero-tagline">
+        <div class="hero-headline">
           <span id="typewriter"></span><span class="cursor">|</span>
         </div>
         <p class="hero-desc">
-          I'm a final-year Computer Science student with a strong interest in Java backend development. I enjoy solving algorithmic problems and building applications that solve real-world challenges. Currently preparing for software engineering roles while continuously improving my problem-solving and development skills.
+          Full-Stack Engineer specializing in Generative AI Application Security, runtime security proxies, and robust Java/Node backend ecosystems. Experienced in architecting low-latency runtime security proxies (SentinelMCP), building intelligent AI assessment platforms, and optimizing web architectures for scale, security, and sub-50ms enforcement.
         </p>
         <div class="hero-btns">
-          <a href="#projects" class="btn-primary">View Projects →</a>
+          <a href="#projects" class="btn-primary">View Featured Projects →</a>
           <a href="#contact" class="btn-outline">Get In Touch</a>
         </div>
         <div class="hero-socials">
@@ -341,19 +387,19 @@ footer p:first-child{color:var(--text);font-weight:500;margin-bottom:.2rem}
         </div>
         <div class="profile-details">
           <h3 class="profile-title">Kanishka V</h3>
-          <p class="profile-subtitle">Aspiring Software Engineer</p>
+          <p class="profile-subtitle">Full-Stack Engineer &amp; AI Security</p>
           <div class="profile-stats">
             <div class="profile-stat">
               <div class="profile-stat-val">5+</div>
               <div class="profile-stat-lbl">Projects</div>
             </div>
             <div class="profile-stat">
-              <div class="profile-stat-val">1</div>
-              <div class="profile-stat-lbl">Internship</div>
+              <div class="profile-stat-val" style="color:var(--green)">100%</div>
+              <div class="profile-stat-lbl">Containment</div>
             </div>
             <div class="profile-stat">
-              <div class="profile-stat-val">Final Yr</div>
-              <div class="profile-stat-lbl">CSE Student</div>
+              <div class="profile-stat-val">7.86</div>
+              <div class="profile-stat-lbl">B.E. CGPA</div>
             </div>
           </div>
         </div>
@@ -366,7 +412,7 @@ footer p:first-child{color:var(--text);font-weight:500;margin-bottom:.2rem}
 <section id="about">
   <div class="container">
     <div class="section-head">
-      <div class="section-eye">// profile</div>
+      <div class="section-eye">// engineering profile</div>
       <h2 class="section-title">About <span>Me</span></h2>
       <div class="section-line"></div>
     </div>
@@ -374,111 +420,109 @@ footer p:first-child{color:var(--text);font-weight:500;margin-bottom:.2rem}
     <div class="about-grid">
       <div class="about-card">
         <div class="about-card-title"><span>👤</span> Who Am I</div>
-        <p>A final-year B.E. Computer Science & Engineering student at Dr. N.G.P. Institute of Technology, Coimbatore. Focused on core software engineering principles and structured problem solving.</p>
+        <p>A final-year B.E. Computer Science &amp; Engineering student at Dr. N.G.P. Institute of Technology, Coimbatore (CGPA: 7.86). Specialized in full-stack web architectures, runtime proxy security for AI agents, and resilient distributed systems.</p>
       </div>
       <div class="about-card">
-        <div class="about-card-title"><span>🎯</span> Current Focus</div>
-        <p>Refining Java development skills, building backend REST APIs with Spring Boot, writing relational database queries, and solving algorithmic problems on a daily basis.</p>
+        <div class="about-card-title"><span>🛡️</span> Technical Focus</div>
+        <p>Architecting runtime security controls for LLM tool executions (MCP), mitigating prompt injections &amp; data exfiltration, building full-stack reactive applications, and designing high-efficiency relational schemas.</p>
       </div>
       <div class="about-card">
-        <div class="about-card-title"><span>🚀</span> Career Goal</div>
-        <p>Seeking to launch my career as a Software Engineer or Java Backend Developer in a collaborative, product-driven environment where I can build clean, maintainable backend services.</p>
+        <div class="about-card-title"><span>🚀</span> Engineering Value</div>
+        <p>Delivering production-grade software backed by rigorous empirical benchmarks: 100% containment across 127 attack traces, sub-50ms enforcement latency, and 25% DOM render optimizations.</p>
       </div>
     </div>
 
     <div class="about-chips">
-      <div class="about-chip"><span class="dot" style="background:var(--accent)"></span>Backend Development</div>
-      <div class="about-chip"><span class="dot" style="background:var(--cyan)"></span>Web Development</div>
-      <div class="about-chip"><span class="dot" style="background:var(--green)"></span>Problem Solving</div>
-      <div class="about-chip"><span class="dot" style="background:var(--orange)"></span>Machine Learning</div>
+      <div class="about-chip"><span class="dot" style="background:var(--accent)"></span>Full-Stack Engineer</div>
+      <div class="about-chip"><span class="dot" style="background:var(--cyan)"></span>Generative AI Application Security</div>
+      <div class="about-chip"><span class="dot" style="background:var(--green)"></span>MCP Runtime Proxies</div>
+      <div class="about-chip"><span class="dot" style="background:var(--orange)"></span>Java &amp; Spring Boot</div>
+      <div class="about-chip"><span class="dot" style="background:var(--pink)"></span>Data Structures &amp; Algorithms</div>
     </div>
   </div>
 </section>
 
-<!-- SKILLS & CURRENTLY LEARNING -->
+<!-- SKILLS MATRIX OVERHAUL -->
 <section id="skills">
   <div class="container">
     <div class="section-head">
-      <div class="section-eye">// capabilities</div>
-      <h2 class="section-title">Skills &amp; <span>Roadmap</span></h2>
+      <div class="section-eye">// technical competencies</div>
+      <h2 class="section-title">Skills <span>Matrix</span></h2>
       <div class="section-line"></div>
     </div>
+
+    <div class="skills-filter-nav">
+      <button class="skills-filter-btn active" onclick="filterSkills('all', this)">All Categories</button>
+      <button class="skills-filter-btn" onclick="filterSkills('languages', this)">Programming Languages</button>
+      <button class="skills-filter-btn" onclick="filterSkills('backend', this)">Backend &amp; Frameworks</button>
+      <button class="skills-filter-btn" onclick="filterSkills('ai', this)">AI / ML &amp; Security</button>
+      <button class="skills-filter-btn" onclick="filterSkills('tools', this)">Databases &amp; Tools</button>
+    </div>
     
-    <div class="skills-wrapper">
-      <div class="skills-grid">
-        <div class="skill-cat">
-          <div class="skill-cat-title">Languages</div>
-          <ul class="skill-list">
-            <li class="skill-item">Java</li>
-            <li class="skill-item">JavaScript</li>
-            <li class="skill-item">SQL</li>
-          </ul>
+    <div class="skills-matrix">
+      <!-- 1. Programming Languages -->
+      <div class="skill-box" data-category="languages">
+        <div class="skill-box-header">
+          <div class="skill-box-title"><span>💻</span> Programming Languages</div>
+          <span class="skill-box-badge">6 Core</span>
         </div>
-        <div class="skill-cat">
-          <div class="skill-cat-title">Backend</div>
-          <ul class="skill-list">
-            <li class="skill-item">Spring Boot</li>
-          </ul>
-        </div>
-        <div class="skill-cat">
-          <div class="skill-cat-title">Frontend</div>
-          <ul class="skill-list">
-            <li class="skill-item">HTML</li>
-            <li class="skill-item">CSS</li>
-            <li class="skill-item">JavaScript</li>
-          </ul>
-        </div>
-        <div class="skill-cat">
-          <div class="skill-cat-title">Tools</div>
-          <ul class="skill-list">
-            <li class="skill-item">Git &amp; GitHub</li>
-            <li class="skill-item">IntelliJ IDEA</li>
-            <li class="skill-item">VS Code</li>
-          </ul>
+        <div class="skill-tags-list">
+          <span class="skill-tag-pill">Java</span>
+          <span class="skill-tag-pill">Python</span>
+          <span class="skill-tag-pill">JavaScript</span>
+          <span class="skill-tag-pill">React</span>
+          <span class="skill-tag-pill">HTML5</span>
+          <span class="skill-tag-pill">CSS3</span>
         </div>
       </div>
-      
-      <!-- CURRENTLY LEARNING ROADMAP -->
-      <div class="roadmap-card">
-        <div class="roadmap-title">Learning Roadmap</div>
-        <ul class="roadmap-list">
-          <li class="roadmap-item">
-            <span class="roadmap-status status-done">✔</span>
-            <span class="roadmap-text">Java Core &amp; SQL</span>
-          </li>
-          <li class="roadmap-item">
-            <span class="roadmap-status status-done">✔</span>
-            <span class="roadmap-text">Spring Boot REST APIs</span>
-          </li>
-          <li class="roadmap-item">
-            <span class="roadmap-status status-progress">🔄</span>
-            <span class="roadmap-text">Spring Security (Auth)</span>
-          </li>
-          <li class="roadmap-item">
-            <span class="roadmap-status status-progress">🔄</span>
-            <span class="roadmap-text">Advanced Java Concepts</span>
-          </li>
-          <li class="roadmap-item">
-            <span class="roadmap-status status-progress">🔄</span>
-            <span class="roadmap-text">React Frontend Basics</span>
-          </li>
-          <li class="roadmap-item planned">
-            <span class="roadmap-status status-planned">⬜</span>
-            <span class="roadmap-text">REST API Design</span>
-          </li>
-          <li class="roadmap-item planned">
-            <span class="roadmap-status status-planned">⬜</span>
-            <span class="roadmap-text">Docker &amp; Containerization</span>
-          </li>
-          <li class="roadmap-item planned">
-            <span class="roadmap-status status-planned">⬜</span>
-            <span class="roadmap-text">AWS Cloud Deployment</span>
-          </li>
-          <li class="roadmap-item planned">
-            <span class="roadmap-status status-planned">⬜</span>
-            <span class="roadmap-text">Kubernetes</span>
-          </li>
-        </ul>
+
+      <!-- 2. Backend & Frameworks -->
+      <div class="skill-box" data-category="backend">
+        <div class="skill-box-header">
+          <div class="skill-box-title"><span>⚙️</span> Backend &amp; Frameworks</div>
+          <span class="skill-box-badge">Ecosystems</span>
+        </div>
+        <div class="skill-tags-list">
+          <span class="skill-tag-pill">Java (Spring Boot)</span>
+          <span class="skill-tag-pill">Node.js</span>
+          <span class="skill-tag-pill">Express.js</span>
+          <span class="skill-tag-pill">REST APIs</span>
+          <span class="skill-tag-pill">Flask</span>
+        </div>
+      </div>
+
+      <!-- 3. AI / ML & Security -->
+      <div class="skill-box" data-category="ai">
+        <div class="skill-box-header">
+          <div class="skill-box-title"><span>🛡️</span> AI / ML &amp; Security</div>
+          <span class="skill-box-badge">Specialization</span>
+        </div>
+        <div class="skill-tags-list">
+          <span class="skill-tag-pill">LLM Agent Security (MCP)</span>
+          <span class="skill-tag-pill">Scikit-learn</span>
+          <span class="skill-tag-pill">XGBoost</span>
+          <span class="skill-tag-pill">RAG (basic)</span>
+          <span class="skill-tag-pill">LangChain (basic)</span>
+        </div>
+      </div>
+
+      <!-- 4. Databases & Tools -->
+      <div class="skill-box" data-category="tools">
+        <div class="skill-box-header">
+          <div class="skill-box-title"><span>🗄️</span> Databases &amp; Tools</div>
+          <span class="skill-box-badge">Infra &amp; Data</span>
+        </div>
+        <div class="skill-tags-list">
+          <span class="skill-tag-pill">MySQL</span>
+          <span class="skill-tag-pill">PostgreSQL</span>
+          <span class="skill-tag-pill">SQLite</span>
+          <span class="skill-tag-pill">MongoDB</span>
+          <span class="skill-tag-pill">Git</span>
+          <span class="skill-tag-pill">GitHub</span>
+          <span class="skill-tag-pill">Postman</span>
+          <span class="skill-tag-pill">Vercel</span>
+          <span class="skill-tag-pill">Render</span>
+        </div>
       </div>
     </div>
   </div>
@@ -488,115 +532,237 @@ footer p:first-child{color:var(--text);font-weight:500;margin-bottom:.2rem}
 <section id="projects">
   <div class="container">
     <div class="section-head">
-      <div class="section-eye">// implementation</div>
-      <h2 class="section-title">My <span>Work</span></h2>
+      <div class="section-eye">// engineering implementations</div>
+      <h2 class="section-title">Featured <span>Projects</span></h2>
       <div class="section-line"></div>
     </div>
 
-    <!-- FEATURED PROJECT -->
+    <!-- FEATURED PROJECT: SentinelMCP -->
     <div class="featured-card">
-      <div class="featured-badge">Featured Project</div>
-      <div class="featured-title">CareerForge AI</div>
-      <div class="featured-grid">
-        <div>
-          <p class="featured-desc">
-            An AI-driven career and technical interview preparation platform. It enables students to analyze their resumes against target job descriptions and practice simulated technical interviews with real-time feedback.
-          </p>
-          
-          <div class="featured-sec-title">Key Metrics</div>
-          <ul class="featured-bullets">
-            <li class="featured-bullet"><strong>3 Core Modules:</strong> Authentication, AI Resume Analytics, &amp; Mock Interview Engine.</li>
-            <li class="featured-bullet"><strong>10 REST API Endpoints:</strong> Handle authentication, resume processing, and interview flow.</li>
-            <li class="featured-bullet"><strong>3 MongoDB Collections:</strong> Document structures mapping Users, Resumes, and InterviewResults.</li>
-          </ul>
-          
-          <div class="featured-links" style="margin-top:1.5rem">
-            <a href="https://github.com/kani202613/CareerForgeAI" target="_blank" class="btn-repo">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49v-1.71c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 7.4c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.27 10.27 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg> Repository
-            </a>
-            <a href="https://career-forge-ai-amber.vercel.app" target="_blank" class="btn-repo">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg> Live Demo
-            </a>
-            <button onclick="openCaseStudyModal()" class="btn-repo" style="background:var(--accent); border-color:var(--accent); color:#fff; cursor:pointer; font-family:var(--font); font-weight:600">
-              View Full Case Study →
-            </button>
+      <div class="featured-badge">Top Featured Project · 2026</div>
+      <h3 class="featured-title">SentinelMCP: Context-Aware Security Proxy for AI Agents</h3>
+      <div class="featured-subhead">Runtime Security Proxy · Prompt Injection &amp; Data Exfiltration Defense</div>
+      
+      <p class="featured-desc">
+        Built a runtime security proxy that intercepts <strong>MCP (Model Context Protocol) tool calls</strong> to block prompt injection and data exfiltration using a <strong>5-factor Sentinel Risk Index</strong> (MiniLM semantic context drift, NetworkX call-graph anomalies, XGBoost threat classification). Evaluated across empirical attack sets with <strong>sandboxed redirection</strong> of high-risk invocations.
+      </p>
+
+      <!-- Exact Core Metrics Matrix -->
+      <div class="validation-matrix">
+        <div class="val-card">
+          <div class="val-num green">100%</div>
+          <div class="val-label">Attacks Contained (127 Traces)</div>
+        </div>
+        <div class="val-card">
+          <div class="val-num cyan">0.88</div>
+          <div class="val-label">F1 Detection Score</div>
+        </div>
+        <div class="val-card">
+          <div class="val-num pink">&lt; 50 ms</div>
+          <div class="val-label">Enforcement Latency</div>
+        </div>
+        <div class="val-card">
+          <div class="val-num accent">Sandbox</div>
+          <div class="val-label">High-Risk Redirection</div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="featured-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">MCP-SDK</span>
+        <span class="stack-tag">Flask</span>
+        <span class="stack-tag">XGBoost</span>
+        <span class="stack-tag">Scikit-learn</span>
+        <span class="stack-tag">SQLite</span>
+        <span class="stack-tag">NetworkX</span>
+        <span class="stack-tag">MiniLM Embeddings</span>
+      </div>
+
+      <!-- Interactive Architecture Diagram -->
+      <div class="arch-container">
+        <div class="arch-header">
+          <div class="arch-title">
+            <span>⚙️</span> Interactive Architecture Pipeline
+          </div>
+          <div class="arch-sim-btns">
+            <button class="arch-btn safe" onclick="simulateArch('safe')">▶ Simulate Safe Tool Call</button>
+            <button class="arch-btn attack" onclick="simulateArch('attack')">⚠ Simulate Injection Attack</button>
+            <button class="arch-btn reset" onclick="resetArch()">↺ Reset</button>
           </div>
         </div>
-        
-        <div class="featured-info-box">
-          <div class="featured-sec-title">Tech Stack</div>
-          <div class="featured-stack" style="margin-bottom:1.5rem">
-            <span class="stack-tag">React</span>
-            <span class="stack-tag">Node.js</span>
-            <span class="stack-tag">Express.js</span>
-            <span class="stack-tag">MongoDB</span>
-            <span class="stack-tag">Mongoose</span>
-            <span class="stack-tag">Gemini AI</span>
-            <span class="stack-tag">Vite</span>
-            <span class="stack-tag">Vercel</span>
+
+        <div class="arch-flow-diagram">
+          <!-- Node 1: Client AI Agent -->
+          <div class="arch-box" id="node-agent">
+            <div class="arch-box-icon">🤖</div>
+            <div class="arch-box-name">Client AI Agent</div>
+            <div class="arch-box-desc">Autonomous LLM tool caller</div>
           </div>
-          
-          <div class="featured-sec-title">High-Level Architecture</div>
-          <div class="arch-flow" style="font-size:.78rem; padding:.8rem; background:rgba(0,0,0,0.25); border:1px solid var(--border); border-radius:6px; font-family:var(--mono); line-height:1.4; color:var(--cyan)">
-React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
+
+          <div class="arch-arrow"><span>JSON-RPC</span> ➔</div>
+
+          <!-- Node 2: MCP Tool Call -->
+          <div class="arch-box" id="node-call">
+            <div class="arch-box-icon">⚡</div>
+            <div class="arch-box-name">MCP Tool Call</div>
+            <div class="arch-box-desc">read_file / exec_sql query</div>
+          </div>
+
+          <div class="arch-arrow"><span>Intercept</span> ➔</div>
+
+          <!-- Node 3: SentinelMCP Proxy Engine -->
+          <div class="arch-box" id="node-proxy">
+            <div class="arch-box-icon">🛡️</div>
+            <div class="arch-box-name">SentinelMCP Engine</div>
+            <div class="arch-box-desc">MiniLM • NetworkX • XGBoost</div>
+          </div>
+
+          <div class="arch-arrow"><span id="eval-arrow-label">Risk Eval</span> ➔</div>
+
+          <!-- Node 4: Branches -->
+          <div class="arch-split-col">
+            <div class="arch-box branch safe-branch" id="node-safe">
+              <div class="branch-status safe-text">CLEAN (Score &lt; 0.65)</div>
+              <div class="arch-box-name">Safe Target Execution</div>
+              <div class="arch-box-desc">Forwarded to destination MCP tool</div>
+            </div>
+            <div class="arch-box branch sandbox-branch" id="node-sandbox">
+              <div class="branch-status sand-text">CONTAINED (Risk &ge; 0.65)</div>
+              <div class="arch-box-name">Sandbox Redirection</div>
+              <div class="arch-box-desc">Isolated mock environment &amp; telemetry alert</div>
+            </div>
           </div>
         </div>
+
+        <div class="arch-live-log">
+          <span class="log-cursor">&gt;</span>
+          <span id="log-text">System ready. Click "Simulate Safe Tool Call" or "Simulate Injection Attack" to trace pipeline evaluation in real-time.</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="featured-actions">
+        <a href="https://github.com/kani202613" target="_blank" class="btn-repo">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.09.68-.22.68-.49v-1.71c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0112 7.4c.85 0 1.7.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.27 10.27 0 0022 12.26C22 6.58 17.52 2 12 2z"/></svg> GitHub Repository
+        </a>
+        <button onclick="openSentinelCaseStudy()" class="btn-case-study">
+          View SentinelMCP Case Study →
+        </button>
       </div>
     </div>
 
-    <!-- OTHER PROJECTS Grid -->
-    <div class="featured-sec-title" style="margin-bottom:1rem; font-size:.85rem">Other Projects</div>
+    <!-- OTHER PROJECTS GRID -->
+    <div class="section-eye" style="justify-content:flex-start; margin-bottom:1.5rem">// application portfolio</div>
     <div class="projects-grid">
       
+      <!-- 1. PrepWise AI (CareerForge AI) -->
       <div class="project-card">
-        <div class="proj-title">Waste-Recycler Market Platform</div>
-        <p class="proj-desc">A digital marketplace connecting waste generators with local recycling hubs to coordinate transactional waste collection.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">HTML5/CSS3</span>
-          <span class="proj-tag">JavaScript</span>
-          <span class="proj-tag">SQL</span>
+        <div class="proj-header">
+          <div class="proj-title">PrepWise AI: Intelligent Readiness Platform</div>
+          <span class="proj-year">2026</span>
         </div>
-        <button class="view-details-btn" onclick="openModal('recycler')">View Details →</button>
+        <p class="proj-desc">
+          Full-stack AI interview-prep platform that parses uploaded resumes to generate personalized roadmaps, coding scenarios, and mock interviews, with Gemini/OpenAI rubric-based answer scoring and JWT/RBAC security.
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Node.js</span>
+          <span class="proj-tag">Express.js</span>
+          <span class="proj-tag">React.js</span>
+          <span class="proj-tag">Gemini API</span>
+          <span class="proj-tag">MongoDB</span>
+          <span class="proj-tag">JWT</span>
+        </div>
+        <div class="proj-card-actions">
+          <button class="view-details-btn" onclick="openPrepwiseCaseStudy()">View Details →</button>
+          <div class="proj-links-sm">
+            <a href="https://github.com/kani202613/CareerForgeAI" target="_blank" class="proj-link-icon" title="Repo">🐙</a>
+            <a href="https://career-forge-ai-amber.vercel.app" target="_blank" class="proj-link-icon" title="Live">🔗</a>
+          </div>
+        </div>
       </div>
 
+      <!-- 2. Waste-RecyclerMarket Platform -->
       <div class="project-card">
-        <div class="proj-title">Local Buddy Directory</div>
-        <p class="proj-desc">A responsive web catalog directory enabling local home-based businesses to showcase products within their community.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">HTML5/CSS3</span>
-          <span class="proj-tag">JavaScript</span>
-          <span class="proj-tag">SQL</span>
+        <div class="proj-header">
+          <div class="proj-title">Waste-RecyclerMarket Platform</div>
+          <span class="proj-year">2025</span>
         </div>
-        <button class="view-details-btn" onclick="openModal('buddy')">View Details →</button>
+        <p class="proj-desc">
+          Full-stack scrap-trading marketplace connecting waste generators, collectors, and industrial buyers, with a multi-role MySQL schema, postal-code-based search and pickup dispatch, and negotiation quotes.
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Node.js</span>
+          <span class="proj-tag">Express.js</span>
+          <span class="proj-tag">React.js</span>
+          <span class="proj-tag">MySQL / SQLite</span>
+          <span class="proj-tag">REST APIs</span>
+          <span class="proj-tag">JWT</span>
+          <span class="proj-tag">Render</span>
+        </div>
+        <div class="proj-card-actions">
+          <button class="view-details-btn" onclick="openModal('recycler')">View Details →</button>
+          <div class="proj-links-sm">
+            <a href="https://github.com/kani202613" target="_blank" class="proj-link-icon" title="Repo">🐙</a>
+          </div>
+        </div>
       </div>
 
+      <!-- 3. Local Buddy: Hyperlocal Community Commerce Platform -->
       <div class="project-card">
-        <div class="proj-title">Predictive Hybrid System</div>
-        <p class="proj-desc">An analytical crop prediction system using regression algorithms to predict hybrid yields based on soil nutrients.</p>
-        <div class="proj-tags">
-          <span class="proj-tag">Python</span>
-          <span class="proj-tag">Scikit-Learn</span>
-          <span class="proj-tag">Pandas</span>
+        <div class="proj-header">
+          <div class="proj-title">Local Buddy: Hyperlocal Commerce Platform</div>
+          <span class="proj-year">2025</span>
         </div>
-        <button class="view-details-btn" onclick="openModal('predictive')">View Details →</button>
+        <p class="proj-desc">
+          Hyperlocal commerce app enabling neighborhood merchants to digitize product catalogs and sell directly to nearby residents, featuring offline-first local SQLite storage, background sync, and proximity filtering.
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">JavaScript</span>
+          <span class="proj-tag">SQLite</span>
+          <span class="proj-tag">REST APIs</span>
+          <span class="proj-tag">HTML5</span>
+          <span class="proj-tag">CSS3</span>
+          <span class="proj-tag">PHP</span>
+        </div>
+        <div class="proj-card-actions">
+          <button class="view-details-btn" onclick="openModal('buddy')">View Details →</button>
+          <div class="proj-links-sm">
+            <a href="https://github.com/kani202613" target="_blank" class="proj-link-icon" title="Repo">🐙</a>
+          </div>
+        </div>
       </div>
 
+      <!-- 4. Online Vehicle Rental Management System -->
       <div class="project-card">
-        <div class="proj-title">Vehicle Rental System</div>
-        <p class="proj-desc">An automated management system designed to coordinate fleet tracking, reservation logs, and booking records.</p>
+        <div class="proj-header">
+          <div class="proj-title">Online Vehicle Rental Management System</div>
+          <span class="proj-year">2024</span>
+        </div>
+        <p class="proj-desc">
+          End-to-end vehicle booking and fleet-management system with a normalized MySQL schema and transactional checks preventing double-booking, tiered hourly/daily fare engine, and live admin dashboard.
+        </p>
         <div class="proj-tags">
+          <span class="proj-tag">PHP</span>
+          <span class="proj-tag">MySQL</span>
+          <span class="proj-tag">Apache</span>
           <span class="proj-tag">HTML5/CSS3</span>
           <span class="proj-tag">JavaScript</span>
-          <span class="proj-tag">SQL</span>
+          <span class="proj-tag">Bootstrap</span>
         </div>
-        <button class="view-details-btn" onclick="openModal('rental')">View Details →</button>
+        <div class="proj-card-actions">
+          <button class="view-details-btn" onclick="openModal('rental')">View Details →</button>
+          <div class="proj-links-sm">
+            <a href="https://github.com/kani202613" target="_blank" class="proj-link-icon" title="Repo">🐙</a>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- EXPERIENCE & EDUCATION -->
 <section id="experience">
   <div class="container">
     <div class="section-head">
@@ -606,32 +772,46 @@ React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
     </div>
     
     <div class="timeline">
+      <!-- Internship Experience -->
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-meta">Jun 2025 · Coimbatore, India</div>
+        <div class="tl-meta">June 2025 · Coimbatore, India</div>
         <div class="tl-title">Web Developer Intern</div>
-        <div class="tl-sub">AppIn Technology</div>
+        <div class="tl-sub">AppIn Technology (15 days)</div>
         <div class="tl-body">
           <ul>
-            <li>Developed responsive web pages using HTML, CSS and JavaScript.</li>
-            <li>Collaborated using GitHub for version control.</li>
-            <li>Worked on client requirements under mentor guidance.</li>
-            <li>Improved understanding of software development workflow.</li>
+            <li>Built responsive, mobile-first pages with HTML5, CSS3 (Flexbox/Grid), and vanilla JavaScript, thoroughly tested for cross-browser compatibility.</li>
+            <li><strong>Refactored legacy UI components and optimized DOM manipulation, achieving a 25% initial render speed improvement.</strong></li>
+            <li>Collaborated in an agile Git/GitHub PR workflow (feature branches, structured code reviews, merge-conflict resolution) and implemented client-side form validation.</li>
           </ul>
         </div>
       </div>
 
+      <!-- Higher Education -->
       <div class="tl-item">
         <div class="tl-dot"></div>
-        <div class="tl-meta">2022 – 2026 · Coimbatore, India</div>
+        <div class="tl-meta">2023 – Present · Coimbatore, India</div>
         <div class="tl-title">B.E. — Computer Science &amp; Engineering</div>
-        <div class="tl-sub">Dr. N.G.P. Institute of Technology</div>
+        <div class="tl-sub">Dr. N.G.P. Institute of Technology · CGPA: 7.86 (Till 6th Semester)</div>
         <div class="tl-body">
           <ul>
-            <li>Focused on Java backend development, algorithms, and web technologies.</li>
-            <li>Completed 5 academic and personal development projects.</li>
-            <li>Served as Overall Coordinator for KANAM'26 Project Expo.</li>
-            <li>Active community service participant with NSS.</li>
+            <li>Specializing in full-stack application development, AI runtime proxy security, and algorithm design.</li>
+            <li>Served as <strong>Overall Coordinator</strong> for the Project Expo at KANAM'26.</li>
+            <li>Active volunteer and contributor with the National Service Scheme (NSS).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- High School Education -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-meta">2022 – 2023 · Salem, India</div>
+        <div class="tl-title">Higher Secondary Certificate (HSC) — Computer Science</div>
+        <div class="tl-sub">Tagore Matric. Hr. Sec. School · Score: 88.16%</div>
+        <div class="tl-body">
+          <ul>
+            <li>Core specialization in Computer Science, Mathematics, Physics, and Chemistry.</li>
+            <li>Demonstrated high academic standing and participation in zonal sports competitions.</li>
           </ul>
         </div>
       </div>
@@ -643,7 +823,7 @@ React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
 <section id="problem-solving">
   <div class="container">
     <div class="section-head">
-      <div class="section-eye">// data structures</div>
+      <div class="section-eye">// algorithmic mastery</div>
       <h2 class="section-title">Problem <span>Solving</span></h2>
       <div class="section-line"></div>
     </div>
@@ -651,7 +831,7 @@ React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
     <div class="ps-wrapper">
       <div class="ps-card">
         <div class="ps-stat-box">
-          <div class="ps-stat-val">105</div>
+          <div class="ps-stat-val">105+</div>
           <div class="ps-stat-lbl">LeetCode Solved</div>
         </div>
         <div class="ps-info">
@@ -660,8 +840,8 @@ React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
             <p>LeetCode (<a href="https://leetcode.com/u/kani20/" target="_blank" style="color:var(--cyan); text-decoration:none">u/kani20/</a>)</p>
           </div>
           <div class="ps-info-item">
-            <h4>Primary Language</h4>
-            <p>Java</p>
+            <h4>Primary Languages</h4>
+            <p>Java · Python</p>
           </div>
           <div class="ps-info-item">
             <h4>Difficulty Distribution</h4>
@@ -672,119 +852,98 @@ React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
         </div>
       </div>
       
-      <div class="roadmap-card">
-        <div class="roadmap-title">Currently Practicing</div>
+      <div class="roadmap-card" style="background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:1.8rem">
+        <div style="font-size:.82rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--cyan); margin-bottom:.8rem">
+          Currently Practicing
+        </div>
         <div class="ps-topic-grid" style="margin-top:.5rem">
           <span class="ps-topic-badge">Arrays</span>
           <span class="ps-topic-badge">Strings</span>
           <span class="ps-topic-badge">Sliding Window</span>
           <span class="ps-topic-badge">Binary Search</span>
           <span class="ps-topic-badge">HashMap</span>
+          <span class="ps-topic-badge">Graph Traversal</span>
           <span class="ps-topic-badge">Dynamic Programming</span>
         </div>
         <div style="margin-top:1.5rem">
-          <p style="font-size:.82rem; color:var(--muted); line-height:1.6">Focusing on pattern recognition, time/space complexity optimization, and building robust, error-free implementations for common algorithmic patterns.</p>
+          <p style="font-size:.85rem; color:var(--muted); line-height:1.7">
+            Emphasizing time and space complexity trade-offs, graph search algorithms for threat telemetry modeling, and clean object-oriented solutions.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
-<section id="achievements">
+<!-- CREDENTIALS & ACTIVITIES -->
+<section id="credentials">
   <div class="container">
     <div class="section-head">
-      <div class="section-eye">// highlights</div>
-      <h2 class="section-title">Achievements &amp; <span>Activities</span></h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="ach-grid">
-      <div class="ach-card">
-        <span class="ach-emoji">🏆</span>
-        <div class="ach-title">Overall Coordinator</div>
-        <div class="ach-detail">Led and organized the entire Project Expo at KANAM'26, Dr. N.G.P. Institute of Technology.</div>
-      </div>
-      <div class="ach-card">
-        <span class="ach-emoji">📜</span>
-        <div class="ach-title">NPTEL Elite + Silver</div>
-        <div class="ach-detail">Scored 84% in IoT certification — Elite + Silver grade from NPTEL (2025).</div>
-      </div>
-      <div class="ach-card">
-        <span class="ach-emoji">🤝</span>
-        <div class="ach-title">NSS Volunteer</div>
-        <div class="ach-detail">Active community service through National Service Scheme — Special Camp participant 2024.</div>
-      </div>
-      <div class="ach-card">
-        <span class="ach-emoji">💻</span>
-        <div class="ach-title">Hackathon Competitor</div>
-        <div class="ach-detail">KPR Hackathon participant — team-based problem solving under time constraints.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPACT LEARNING -->
-<section id="learning">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-eye">// credentials</div>
-      <h2 class="section-title">Learning &amp; <span>Certificates</span></h2>
+      <div class="section-eye">// recognized competence</div>
+      <h2 class="section-title">Certifications &amp; <span>Activities</span></h2>
       <div class="section-line"></div>
     </div>
     
-    <div class="learning-grid">
-      <div class="learning-card">
-        <span class="learning-icon">📡</span>
-        <div class="learning-info">
-          <div class="learning-name">Introduction to IoT</div>
-          <div class="learning-org">NPTEL · Elite + Silver (84%)</div>
+    <!-- NPTEL & Academic Certifications -->
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-icon">📡</div>
+        <div class="cert-info">
+          <div class="cert-name">Introduction to IoT</div>
+          <div class="cert-org">NPTEL · Jul–Oct 2025</div>
+          <span class="cert-badge">Elite + Silver Grade (84%)</span>
         </div>
-        <a class="learning-link" onclick="alert('IoT NPTEL certification ID: Elite+Silver. Certificate file will be open for audit upon upload.')">View</a>
-      </div>
-      
-      <div class="learning-card">
-        <span class="learning-icon">🤖</span>
-        <div class="learning-info">
-          <div class="learning-name">Machine Learning Workshop</div>
-          <div class="learning-org">Coimbatore Institute of Technology</div>
-        </div>
-        <a class="learning-link" onclick="alert('ML fundamentals workshop credential details are logged.')">View</a>
       </div>
 
-      <div class="learning-card">
-        <span class="learning-icon">⚛️</span>
-        <div class="learning-info">
-          <div class="learning-name">Quantum Computing</div>
-          <div class="learning-org">Kumaraguru College of Tech</div>
+      <div class="cert-card">
+        <div class="cert-icon">☁️</div>
+        <div class="cert-info">
+          <div class="cert-name">Cloud Computing</div>
+          <div class="cert-org">NPTEL · Jan–Apr 2025</div>
+          <span class="cert-badge">Certified</span>
         </div>
-        <a class="learning-link" onclick="alert('Quantum computing introductory workshop credential details logged.')">View</a>
       </div>
 
-      <div class="learning-card">
-        <span class="learning-icon">🚀</span>
-        <div class="learning-info">
-          <div class="learning-name">Ben10X Skill Workshop</div>
-          <div class="learning-org">Skill Development · 2025</div>
+      <div class="cert-card">
+        <div class="cert-icon">📢</div>
+        <div class="cert-info">
+          <div class="cert-name">Technical Paper Presentation</div>
+          <div class="cert-org">KIT Conference (2025)</div>
+          <span class="cert-badge">Presented</span>
         </div>
-        <a class="learning-link" onclick="alert('Skill development workshop credential details logged.')">View</a>
       </div>
 
-      <div class="learning-card">
-        <span class="learning-icon">📢</span>
-        <div class="learning-info">
-          <div class="learning-name">Paper Presentation</div>
-          <div class="learning-org">KIT Conference · 2025</div>
+      <div class="cert-card">
+        <div class="cert-icon">⚡</div>
+        <div class="cert-info">
+          <div class="cert-name">Team Hackathon Competitor</div>
+          <div class="cert-org">KPR Institute (2025)</div>
+          <span class="cert-badge">Participant</span>
         </div>
-        <a class="learning-link" onclick="alert('Presented technical paper on IoT-based systems.')">View</a>
       </div>
+    </div>
 
-      <div class="learning-card">
-        <span class="learning-icon">⚡</span>
-        <div class="learning-info">
-          <div class="learning-name">KPR Hackathon</div>
-          <div class="learning-org">KPR Institute · 2025</div>
-        </div>
-        <a class="learning-link" onclick="alert('Hackathon participant entry credentials logged.')">View</a>
+    <!-- Extracurricular Activities -->
+    <div class="ach-grid">
+      <div class="ach-card">
+        <span class="ach-emoji">🏆</span>
+        <div class="ach-title">Overall Coordinator — KANAM'26</div>
+        <div class="ach-detail">Organized and spearheaded the Project Expo at Dr. N.G.P. Institute of Technology, managing planning, cross-team coordination, and event execution.</div>
+      </div>
+      <div class="ach-card">
+        <span class="ach-emoji">🤝</span>
+        <div class="ach-title">NSS Special Camp Volunteer (2024)</div>
+        <div class="ach-detail">Active participant in community development, public health awareness, and rural educational outreach through the National Service Scheme.</div>
+      </div>
+      <div class="ach-card">
+        <span class="ach-emoji">🤖</span>
+        <div class="ach-title">Machine Learning Workshop</div>
+        <div class="ach-detail">Coimbatore Institute of Technology (2024) — Applied foundational supervised learning algorithms and scikit-learn model evaluation.</div>
+      </div>
+      <div class="ach-card">
+        <span class="ach-emoji">⚛️</span>
+        <div class="ach-title">Quantum Computing Workshop</div>
+        <div class="ach-detail">Kumaraguru College of Technology (2024) — Explored quantum circuit modeling and qubit probability principles.</div>
       </div>
     </div>
   </div>
@@ -794,25 +953,27 @@ React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
 <section id="contact">
   <div class="container">
     <div class="section-head">
-      <div class="section-eye">// let's connect</div>
+      <div class="section-eye">// initiate conversation</div>
       <h2 class="section-title">Get In <span>Touch</span></h2>
       <div class="section-line"></div>
     </div>
     
     <div class="contact-grid">
       <div class="contact-info">
-        <p class="contact-desc">I am currently seeking software engineering opportunities where I can apply my Java backend development skills to build real-world systems.</p>
+        <p class="contact-desc">
+          I am actively exploring full-stack engineering, AI security, and backend development roles where I can architect low-latency security proxies and scalable distributed systems.
+        </p>
         
         <div class="open-to-card">
           <div class="open-to-title" style="color:var(--accent2); margin-bottom:.5rem">Preferred Roles</div>
-          <ul class="open-to-list" style="margin-bottom:1rem">
-            <li class="open-to-item">Software Engineer</li>
-            <li class="open-to-item">Backend Developer</li>
-            <li class="open-to-item">Java Developer</li>
+          <ul class="open-to-list" style="margin-bottom:1.1rem">
+            <li class="open-to-item">Full-Stack Engineer</li>
+            <li class="open-to-item">AI Application Security Engineer</li>
+            <li class="open-to-item">Backend Developer (Java / Node.js)</li>
           </ul>
-          <div class="open-to-title" style="color:var(--green); margin-bottom:.5rem">Open To</div>
+          <div class="open-to-title" style="color:var(--green); margin-bottom:.5rem">Availability</div>
           <ul class="open-to-list">
-            <li class="open-to-item">Full-time Opportunities &amp; Internships</li>
+            <li class="open-to-item">Full-Time Opportunities &amp; Immediate Internships</li>
           </ul>
         </div>
         
@@ -825,14 +986,14 @@ React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
           <a href="https://www.linkedin.com/in/kanishka-v-7071782b6/" target="_blank" class="contact-card">
             <div class="contact-card-icon">💼</div>
             <div class="contact-card-label">LinkedIn</div>
-            <div class="contact-card-val">linkedin.com/in/kanishka-v-7071782b6</div>
+            <div class="contact-card-val">kanishka-v-7071782b6</div>
           </a>
-          <a href="https://leetcode.com/u/kani20/" target="_blank" class="contact-card">
-            <div class="contact-card-icon">⚡</div>
-            <div class="contact-card-label">LeetCode</div>
-            <div class="contact-card-val">leetcode.com/u/kani20/</div>
+          <a href="mailto:kanishkavelmurugan205@gmail.com" class="contact-card">
+            <div class="contact-card-icon">✉️</div>
+            <div class="contact-card-label">Email</div>
+            <div class="contact-card-val">kanishkavelmurugan205@gmail.com</div>
           </a>
-          <a href="tel:9080184173" class="contact-card">
+          <a href="tel:+919080184173" class="contact-card">
             <div class="contact-card-icon">📞</div>
             <div class="contact-card-label">Phone</div>
             <div class="contact-card-val">+91 9080184173</div>
@@ -843,15 +1004,15 @@ React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
         <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully. (Demo Mode)'); this.reset();">
           <div class="form-group">
             <label for="form-name">Name</label>
-            <input type="text" id="form-name" placeholder="John Doe" required />
+            <input type="text" id="form-name" placeholder="Hiring Manager / Recruiter" required />
           </div>
           <div class="form-group">
             <label for="form-email">Email</label>
-            <input type="email" id="form-email" placeholder="john@example.com" required />
+            <input type="email" id="form-email" placeholder="recruiter@company.com" required />
           </div>
           <div class="form-group">
             <label for="form-msg">Message</label>
-            <textarea id="form-msg" rows="4" placeholder="Hi Kanishka, I would like to..." required></textarea>
+            <textarea id="form-msg" rows="4" placeholder="Hi Kanishka, we are interested in discussing an engineering opportunity..." required></textarea>
           </div>
           <button type="submit" class="submit-btn">Send Message ⚡</button>
         </form>
@@ -863,11 +1024,11 @@ React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
 <!-- FOOTER -->
 <footer>
   <p>Designed and Developed by <a href="https://github.com/kani202613/Kanishka_Portfolio" target="_blank" style="color:var(--text); text-decoration:none; border-bottom:1px dashed var(--accent)">Kanishka V</a></p>
-  <p>Focused on Java Backend Development and Software Engineering.</p>
-  <p style="margin-top:.5rem; font-size:.72rem">© 2026 · Coimbatore, India · Open to opportunities</p>
+  <p>Full-Stack Engineer | Generative AI Application Security &amp; Java Ecosystems.</p>
+  <p style="margin-top:.5rem; font-size:.74rem">© 2026 · Coimbatore, Tamil Nadu, India · Open to Worldwide Opportunities</p>
 </footer>
 
-<!-- Project Details Modal -->
+<!-- ── MODAL: General Project Details ── -->
 <div id="project-modal" class="modal-overlay" onclick="if(event.target === this) closeModal()">
   <div class="modal-content">
     <button class="modal-close" onclick="closeModal()">&times;</button>
@@ -894,7 +1055,7 @@ React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
     </div>
     
     <div class="modal-section">
-      <h4>Challenges</h4>
+      <h4>Challenges &amp; Resolution</h4>
       <p id="modal-challenges"></p>
     </div>
     
@@ -905,27 +1066,30 @@ React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
   </div>
 </div>
 
-<!-- Case Study Modal -->
-<div id="case-study-modal" class="modal-overlay" onclick="if(event.target === this) closeCaseStudyModal()">
+<!-- ── MODAL: SentinelMCP Case Study ── -->
+<div id="sentinel-case-study-modal" class="modal-overlay" onclick="if(event.target === this) closeSentinelCaseStudy()">
   <div class="modal-content wide">
-    <button class="modal-close" onclick="closeCaseStudyModal()">&times;</button>
-    <h3 class="modal-title">CareerForge AI — Case Study</h3>
+    <button class="modal-close" onclick="closeSentinelCaseStudy()">&times;</button>
+    <h3 class="modal-title">SentinelMCP: Context-Aware Security Proxy for AI Agents</h3>
     
     <div class="modal-section">
-      <h4>Overview &amp; Metrics</h4>
-      <p style="margin-bottom:0.75rem">An AI-driven career and technical interview preparation platform. It enables students to analyze their resumes against target job descriptions and practice simulated technical interviews with real-time feedback.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:1.5rem; margin-top:.5rem">
-        <div style="flex:1; min-width:140px; background:var(--bg3); padding:.75rem 1rem; border-radius:6px; border:1px solid var(--border)">
-          <div style="font-size:1.3rem; font-weight:700; color:var(--accent2)">3</div>
-          <div style="font-size:.65rem; color:var(--muted); text-transform:uppercase">Core Modules</div>
+      <h4>Empirical Performance Validation Matrix</h4>
+      <div class="validation-matrix" style="margin-top:.8rem">
+        <div class="val-card">
+          <div class="val-num green">100%</div>
+          <div class="val-label">Attacks Contained (127 traces)</div>
         </div>
-        <div style="flex:1; min-width:140px; background:var(--bg3); padding:.75rem 1rem; border-radius:6px; border:1px solid var(--border)">
-          <div style="font-size:1.3rem; font-weight:700; color:var(--cyan)">10</div>
-          <div style="font-size:.65rem; color:var(--muted); text-transform:uppercase">REST API Endpoints</div>
+        <div class="val-card">
+          <div class="val-num cyan">0.88</div>
+          <div class="val-label">F1 Detection Score</div>
         </div>
-        <div style="flex:1; min-width:140px; background:var(--bg3); padding:.75rem 1rem; border-radius:6px; border:1px solid var(--border)">
-          <div style="font-size:1.3rem; font-weight:700; color:var(--green)">3</div>
-          <div style="font-size:.65rem; color:var(--muted); text-transform:uppercase">MongoDB Collections</div>
+        <div class="val-card">
+          <div class="val-num pink">&lt; 50 ms</div>
+          <div class="val-label">Enforcement Latency</div>
+        </div>
+        <div class="val-card">
+          <div class="val-num accent">Sandbox</div>
+          <div class="val-label">Isolated Redirection</div>
         </div>
       </div>
     </div>
@@ -934,153 +1098,150 @@ React Frontend ──[REST API]──> Node/Express Backend ──> MongoDB
       <!-- LEFT COLUMN -->
       <div class="cs-col">
         <div class="modal-section">
-          <h4>Full-Stack Architecture</h4>
-          <pre class="cs-tree" style="margin-top:.5rem">
-Browser
-   │
-React Frontend (Vite / Vercel)
-   │
- REST API
-   │
-Express.js Router
-   │
-Business Service Layer
-   │
-Gemini AI API Integration
-   │
-Mongoose Schema Model
-   │
-MongoDB Atlas Database</pre>
-        </div>
-
-        <div class="modal-section">
-          <h4>Technology Decisions</h4>
-          <div class="cs-choices">
-            <div class="cs-choice-card">
-              <div class="cs-choice-title">Node.js + Express</div>
-              <div class="cs-choice-reason">Non-blocking, event-driven I/O loop is highly efficient for managing asynchronous, multi-stage GenAI prompt streams.</div>
-            </div>
-            <div class="cs-choice-card">
-              <div class="cs-choice-title">MongoDB</div>
-              <div class="cs-choice-reason">Flexible document model simplifies storing rich resume analysis and deeply nested AI-generated interview results.</div>
-            </div>
-            <div class="cs-choice-card">
-              <div class="cs-choice-title">REST API</div>
-              <div class="cs-choice-reason">Chosen for its simplicity, clear resource-based routing, and suitability for this application's request-response workflow.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-section">
-          <h4>AI Interview Engine</h4>
-          <p>Built a custom orchestrator around the Gemini API that generates tailored, role-specific questions, parses user input responses, structures scorecards, and appends analytical improvement recommendations.</p>
-        </div>
-
-        <div class="modal-section">
-          <h4>Key Learnings</h4>
-          <ul style="padding-left:1.2rem; color:var(--muted); font-size:0.875rem; line-height:1.6">
-            <li>Designing clean, resource-based RESTful API routing structures.</li>
-            <li>Structuring full-stack asynchronous Node/React applications.</li>
-            <li>Integrating third-party AI models safely with robust prompt validation.</li>
-            <li>Managing complex asynchronous calls and error boundaries in Javascript.</li>
-            <li>Working with schema-less MongoDB document structures.</li>
+          <h4>5-Factor Sentinel Risk Index Architecture</h4>
+          <p>
+            When an autonomous AI agent initiates an MCP (Model Context Protocol) tool execution, SentinelMCP intercepts the JSON-RPC payload and evaluates risk using five discrete mathematical dimensions:
+          </p>
+          <ul style="margin-top:.5rem">
+            <li><strong>MiniLM Context Drift:</strong> Computes semantic cosine distance between conversational intent and tool argument semantics.</li>
+            <li><strong>NetworkX Graph Anomalies:</strong> Builds real-time call-graphs to detect out-of-sequence or cyclical tool chaining attacks.</li>
+            <li><strong>XGBoost Threat Classifier:</strong> Gradient-boosted model trained on lexical and structural exploit signatures.</li>
+            <li><strong>Payload Entropy Scoring:</strong> Detects base64/hex obfuscated data exfiltration attempts.</li>
+            <li><strong>Parameter Schema Enforcement:</strong> Strict validation of argument bounds and typing in SQLite audit store.</li>
           </ul>
+        </div>
+
+        <div class="modal-section">
+          <h4>Enforcement &amp; Containment Flow</h4>
+          <pre class="cs-tree">
+Agent Tool Request (JSON-RPC)
+  │
+  ├── [1] Pre-execution Interception Layer
+  │     ├── Parse tool_name &amp; arguments
+  │     └── Verify caller authentication token
+  │
+  ├── [2] 5-Factor Risk Scoring Engine
+  │     ├── MiniLM Embedding Drift: 0.0 – 1.0
+  │     ├── Call-Graph Anomaly Score: 0.0 – 1.0
+  │     └── XGBoost Inference (Latency &lt; 18ms)
+  │
+  └── [3] Policy Decision Gate (&lt; 50ms)
+        ├── If Risk &lt; 0.65 ➔ Forward to Real MCP Server
+        └── If Risk &ge; 0.65 ➔ Reroute to Mock Sandbox</pre>
         </div>
       </div>
 
       <!-- RIGHT COLUMN -->
       <div class="cs-col">
         <div class="modal-section">
-          <h4>Project Folder Structure</h4>
-          <pre class="cs-tree" style="margin-top:.5rem">
-frontend/
-└── src/
-    ├── components/   # UI Elements (Cards, Modals)
-    ├── pages/        # Dashboard, Interview, Resume
-    ├── context/      # Session State Context
-    └── services/     # API Axios Clients
-backend/
-├── models/           # Mongoose schemas
-│   ├── User.js
-│   ├── Resume.js
-│   └── InterviewResult.js
-├── routes/           # REST endpoints
-│   ├── auth.js
-│   ├── resume.js
-│   └── interview.js
-├── server.js         # Entry point
-└── package.json</pre>
+          <h4>Project Codebase Structure</h4>
+          <pre class="cs-tree">
+sentinel_mcp/
+├── proxy/
+│   ├── interceptor.py      # MCP JSON-RPC protocol interceptor
+│   ├── risk_engine.py      # 5-factor risk scoring calculator
+│   └── sandbox_router.py   # High-risk execution isolation
+├── models/
+│   ├── xgboost_detector.pkl# Gradient boosted classifier
+│   └── minilm_drift.py     # All-MiniLM-L6-v2 semantic encoder
+├── graph/
+│   └── call_graph.py       # NetworkX call graph anomaly analyzer
+├── tests/
+│   └── benchmark_127.py    # 127 benchmark attack traces suite
+├── database/
+│   └── audit_logs.db       # SQLite security audit log store
+└── server.py               # Flask / MCP Proxy Entry Point</pre>
         </div>
 
         <div class="modal-section">
-          <h4>API Preview</h4>
-          <div class="cs-api-list" style="margin-top:.5rem">
-            <div class="cs-api-item">
-              <div>
-                <span class="cs-api-method post">POST</span>
-                <span>/api/auth/login</span>
-              </div>
-              <div class="cs-api-codes">200 | 401 | 500</div>
+          <h4>Real-World Impact &amp; Results</h4>
+          <p>
+            Traditional static guardrails fail against multi-turn prompt injection and indirect data exfiltration. SentinelMCP demonstrated 100% containment across 127 standardized red-team benchmark attack traces with zero overhead to non-malicious agent workflows (&lt; 50 ms total interception overhead).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODAL: PrepWise AI Case Study ── -->
+<div id="prepwise-case-study-modal" class="modal-overlay" onclick="if(event.target === this) closePrepwiseCaseStudy()">
+  <div class="modal-content wide">
+    <button class="modal-close" onclick="closePrepwiseCaseStudy()">&times;</button>
+    <h3 class="modal-title">PrepWise AI — Intelligent Interview Readiness Platform</h3>
+    
+    <div class="modal-section">
+      <h4>Overview &amp; Architecture</h4>
+      <p style="margin-bottom:0.75rem">
+        A full-stack AI interview-prep platform that parses uploaded resumes to generate personalized roadmaps, coding scenarios, and mock interviews, with Gemini/OpenAI rubric-based answer scoring and JWT/RBAC security.
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:1.2rem; margin-top:.5rem">
+        <div style="flex:1; min-width:130px; background:var(--bg3); padding:.75rem 1rem; border-radius:6px; border:1px solid var(--border)">
+          <div style="font-size:1.3rem; font-weight:700; color:var(--accent2)">3</div>
+          <div style="font-size:.65rem; color:var(--muted); text-transform:uppercase">Core Modules</div>
+        </div>
+        <div style="flex:1; min-width:130px; background:var(--bg3); padding:.75rem 1rem; border-radius:6px; border:1px solid var(--border)">
+          <div style="font-size:1.3rem; font-weight:700; color:var(--cyan)">10</div>
+          <div style="font-size:.65rem; color:var(--muted); text-transform:uppercase">REST API Endpoints</div>
+        </div>
+        <div style="flex:1; min-width:130px; background:var(--bg3); padding:.75rem 1rem; border-radius:6px; border:1px solid var(--border)">
+          <div style="font-size:1.3rem; font-weight:700; color:var(--green)">MongoDB</div>
+          <div style="font-size:.65rem; color:var(--muted); text-transform:uppercase">Document Store</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="cs-grid">
+      <div class="cs-col">
+        <div class="modal-section">
+          <h4>Full-Stack Architecture</h4>
+          <pre class="cs-tree">
+Browser (React.js / Vite / Tailwind CSS)
+   │
+ REST API (JWT Authenticated)
+   │
+Express.js Router &amp; Controllers
+   │
+Service Layer (Gemini / OpenAI Rubric Engine)
+   │
+Mongoose ODM Layer
+   │
+MongoDB Atlas Database</pre>
+        </div>
+
+        <div class="modal-section">
+          <h4>Engineering Decisions</h4>
+          <div class="cs-choices">
+            <div class="cs-choice-card">
+              <div class="cs-choice-title">Node.js + Express</div>
+              <div class="cs-choice-reason">Event-driven, asynchronous loop easily handles multi-step AI evaluation streams without blocking server threads.</div>
             </div>
-            <div class="cs-api-item">
-              <div>
-                <span class="cs-api-method post">POST</span>
-                <span>/api/resume/analyze</span>
-              </div>
-              <div class="cs-api-codes">200 | 400 | 500</div>
-            </div>
-            <div class="cs-api-item">
-              <div>
-                <span class="cs-api-method post">POST</span>
-                <span>/api/interview/start</span>
-              </div>
-              <div class="cs-api-codes">200 | 400 | 500</div>
-            </div>
-            <div class="cs-api-item">
-              <div>
-                <span class="cs-api-method post">POST</span>
-                <span>/api/interview/submit</span>
-              </div>
-              <div class="cs-api-codes">200 | 400 | 500</div>
-            </div>
-            <div class="cs-api-item">
-              <div>
-                <span class="cs-api-method get">GET</span>
-                <span>/api/interview/results/:userId</span>
-              </div>
-              <div class="cs-api-codes">200 | 404 | 500</div>
+            <div class="cs-choice-card">
+              <div class="cs-choice-title">MongoDB</div>
+              <div class="cs-choice-reason">Flexible document model smoothly accommodates unstructured resume JSON schemas and nested AI scorecards.</div>
             </div>
           </div>
         </div>
+      </div>
 
+      <div class="cs-col">
         <div class="modal-section">
-          <h4>Database Collections Relationship</h4>
-          <pre class="cs-tree" style="margin-top:.5rem">
-User (Main Account Record)
- │
- ├── Resume (1-to-Many Analyses)
- │
- └── InterviewResult (1-to-Many Attempt Histories)</pre>
+          <h4>Folder Organization</h4>
+          <pre class="cs-tree">
+frontend/
+├── src/components/   # UI Elements &amp; Charts
+├── src/pages/        # Dashboard &amp; Mock Room
+└── src/services/     # API Axios Clients
+backend/
+├── models/           # User, Resume, InterviewResult
+├── routes/           # auth.js, interview.js, resume.js
+└── server.js         # Entry point</pre>
         </div>
 
         <div class="modal-section">
-          <h4>Technical Challenge</h4>
-          <p><strong>Challenge:</strong> Maintaining application responsiveness while waiting for AI-generated responses from Gemini API.</p>
-          <p style="margin-top:0.35rem"><strong>Solution:</strong> Implemented interactive loading states, optimized JSON prompt instructions to minimize payload sizes, and cached session data in React Context to prevent unnecessary server requests and UI freezes.</p>
-        </div>
-
-        <div class="modal-section">
-          <h4>Project Evolution</h4>
-          <div class="cs-tree" style="line-height: 1.6; font-size:.78rem">
-Version 1: Basic Resume Upload &amp; storage
-   ↓
-Version 2: AI-driven Resume feedback scoring
-   ↓
-Version 3: Interactive technical Mock Interviews
-   ↓
-Version 4: Performance audit reports &amp; charts
-   ↓
-Future   : Implement JWT-based authentication</div>
+          <h4>Key Technical Challenge &amp; Solution</h4>
+          <p><strong>Challenge:</strong> Maintaining UI fluidity while awaiting complex LLM rubric scoring results.</p>
+          <p style="margin-top:0.35rem"><strong>Solution:</strong> Implemented optimistic UI updates, payload compression, and React Context state caching to eliminate redundant backend queries.</p>
         </div>
       </div>
     </div>
@@ -1091,10 +1252,11 @@ Future   : Implement JWT-based authentication</div>
 /* ── TYPEWRITER ── */
 (function(){
   const lines=[
-    'Final Year Computer Science Student',
-    'Focused on Java Backend Development',
-    'Problem Solving & Data Structures',
-    'Building Real-world Applications'
+    'Full-Stack Engineer',
+    'Generative AI Application Security (MCP)',
+    'Java Ecosystems & Spring Boot Architectures',
+    'High-Throughput Runtime Security Proxies',
+    'Performance-Optimized Web Applications'
   ];
   let li=0,ci=0,del=false;
   const el=document.getElementById('typewriter');
@@ -1102,12 +1264,12 @@ Future   : Implement JWT-based authentication</div>
     const cur=lines[li];
     if(!del){
       el.textContent=cur.slice(0,++ci);
-      if(ci===cur.length){del=true;setTimeout(tick,1800);return}
-      setTimeout(tick,70);
+      if(ci===cur.length){del=true;setTimeout(tick,1900);return}
+      setTimeout(tick,65);
     }else{
       el.textContent=cur.slice(0,--ci);
       if(ci===0){del=false;li=(li+1)%lines.length;setTimeout(tick,300);return}
-      setTimeout(tick,35);
+      setTimeout(tick,32);
     }
   }
   tick();
@@ -1117,86 +1279,140 @@ Future   : Implement JWT-based authentication</div>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
 
-/* ── NAV ACTIVE LINK ── */
+/* ── NAV SCROLL ACTIVE ── */
 window.addEventListener('scroll',()=>{
   const nav=document.querySelector('nav');
   if(scrollY>40){
-    nav.style.background='rgba(10,10,15,.95)';
-    nav.style.height='56px';
-    nav.style.boxShadow='0 10px 30px rgba(0,0,0,0.3)';
+    nav.style.background='rgba(10,10,15,.96)';
+    nav.style.height='60px';
+    nav.style.boxShadow='0 10px 30px rgba(0,0,0,0.4)';
   }else{
-    nav.style.background='rgba(10,10,15,.85)';
-    nav.style.height='64px';
+    nav.style.background='rgba(10,10,15,.88)';
+    nav.style.height='68px';
     nav.style.boxShadow='none';
   }
 });
 
-/* ── OTHER PROJECTS MODAL DATA ── */
+/* ── SKILLS FILTERING ── */
+function filterSkills(category, btn){
+  document.querySelectorAll('.skills-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const boxes = document.querySelectorAll('.skill-box');
+  boxes.forEach(box => {
+    if(category === 'all' || box.getAttribute('data-category') === category){
+      box.classList.remove('hidden');
+    }else{
+      box.classList.add('hidden');
+    }
+  });
+}
+
+/* ── INTERACTIVE ARCHITECTURE SIMULATOR ── */
+function resetArch(){
+  document.getElementById('node-agent').className = 'arch-box';
+  document.getElementById('node-call').className = 'arch-box';
+  document.getElementById('node-proxy').className = 'arch-box';
+  document.getElementById('node-safe').className = 'arch-box branch safe-branch';
+  document.getElementById('node-sandbox').className = 'arch-box branch sandbox-branch';
+  document.getElementById('eval-arrow-label').textContent = 'Risk Eval';
+  document.getElementById('log-text').textContent = 'System ready. Click "Simulate Safe Tool Call" or "Simulate Injection Attack" to trace pipeline evaluation in real-time.';
+}
+
+function simulateArch(type){
+  resetArch();
+  const logEl = document.getElementById('log-text');
+  const agent = document.getElementById('node-agent');
+  const call = document.getElementById('node-call');
+  const proxy = document.getElementById('node-proxy');
+  const safeNode = document.getElementById('node-safe');
+  const sandboxNode = document.getElementById('node-sandbox');
+  const evalLabel = document.getElementById('eval-arrow-label');
+
+  agent.classList.add('active');
+  logEl.textContent = '[Step 1/4] AI Agent invokes tool call via MCP JSON-RPC protocol...';
+
+  setTimeout(() => {
+    call.classList.add('active');
+    logEl.textContent = type === 'safe' 
+      ? '[Step 2/4] Tool call payload: read_file("docs/quarterly_report.pdf") intercepted.' 
+      : '[Step 2/4] Tool call payload: exec_sql("DROP TABLE users; SELECT * FROM credentials") intercepted!';
+  }, 450);
+
+  setTimeout(() => {
+    proxy.classList.add('active');
+    logEl.textContent = '[Step 3/4] SentinelMCP calculating 5-Factor Risk Index (MiniLM drift, NetworkX call graph, XGBoost)...';
+  }, 950);
+
+  setTimeout(() => {
+    if(type === 'safe'){
+      proxy.classList.remove('active');
+      proxy.classList.add('clean');
+      safeNode.classList.add('clean');
+      evalLabel.textContent = 'Risk: 0.14 < 0.65';
+      logEl.textContent = '[Step 4/4] Enforcement Result: Clean Tool Call (Risk 0.14). Successfully dispatched to target in 34ms! ✅';
+    }else{
+      proxy.classList.remove('active');
+      proxy.classList.add('threat');
+      sandboxNode.classList.add('threat');
+      evalLabel.textContent = 'Risk: 0.94 >= 0.65';
+      logEl.textContent = '[Step 4/4] SECURITY ALERT: Prompt Injection & Data Exfiltration Contained! Intercepted & redirected to Sandbox in 42ms! 🔒';
+    }
+  }, 1600);
+}
+
+/* ── MODALS LOGIC ── */
 const projectDetails = {
   recycler: {
-    title: "Waste-Recycler Market Platform",
-    problem: "Waste generators lack direct ways to connect with local recyclers, resulting in recyclable materials being dumped in landfills.",
-    solution: "Developed a circular economy exchange platform where waste generators can list materials and recyclers can bid on them.",
+    title: "Waste-RecyclerMarket Platform",
+    problem: "Waste generators and industrial recyclers lack a unified, secure trading platform, causing recyclable scrap to be landfilled and pricing to remain untransparent.",
+    solution: "Developed a full-stack scrap-trading marketplace connecting waste generators, collectors, and industrial buyers with transparent quote calculations and proximity search.",
     features: [
-      "User profiles verification systems for both citizens and recycling companies.",
-      "Dynamic material listings board categorizing waste types (plastic, metal, organic).",
-      "Direct chat inquiry generator to coordinate pickup logistics.",
-      "Completed transaction audit logs for database traceability."
+      "Multi-role MySQL schema supporting waste generators, pickup collectors, and industrial buyers.",
+      "Postal-code-based proximity filtering and pickup dispatch coordination workflow.",
+      "Negotiation quotation channel with dynamic bid calculations.",
+      "JWT and Bcrypt encrypted security architecture, deployed on Render."
     ],
-    stack: "HTML5, CSS3, JavaScript, SQL",
-    challenges: "Managing active listings and transaction message logs efficiently on a lightweight schema.",
-    learned: "Formulating clean SQL query joins, optimizing database schemas, and handling dynamic DOM lists."
+    stack: "Node.js, Express.js, React.js, MySQL / SQLite, REST APIs, JWT, Bcrypt, Render",
+    challenges: "Synchronizing multi-party quotation state updates between buyers and collectors without transactional collisions.",
+    learned: "Designed multi-role relational schemas, formulated efficient index-backed proximity search queries, and implemented JWT role-based access control."
   },
   buddy: {
-    title: "Local Buddy Directory",
-    problem: "Small-scale neighborhood home businesses struggle to gain visibility, missing out on local customer bases.",
-    solution: "Created an online catalog directory mapping neighborhood vendors to local consumers.",
+    title: "Local Buddy: Hyperlocal Community Commerce Platform",
+    problem: "Neighborhood home merchants struggle to build online catalogs and connect with local consumers due to high e-commerce commission fees and unstable internet access.",
+    solution: "Created an offline-first hyperlocal community commerce platform that lets neighborhood merchants digitize catalogs and transact directly with nearby buyers.",
     features: [
-      "Product directory listings organized by neighborhood search keywords.",
-      "Category and location-based product filtering mechanisms.",
-      "Custom contact portal linking products directly to seller WhatsApp messages.",
-      "Lightweight responsive seller dash controls."
+      "Offline-first local SQLite architecture with automatic background synchronization when online.",
+      "Proximity filtering and real-time neighborhood inventory tracking.",
+      "Direct merchant communication channel for streamlined order coordination.",
+      "Lightweight responsive seller inventory dashboard."
     ],
-    stack: "HTML5, CSS3, JavaScript, SQL",
-    challenges: "Rendering layout components smoothly across mobile screens of different sizes.",
-    learned: "Designing mobile-first structures and binding datasets to UI components dynamically."
-  },
-  predictive: {
-    title: "Predictive Hybrid System",
-    problem: "Farmers face crop failure risks due to difficulty analyzing complex environmental and nutrient variables prior to planting.",
-    solution: "Built a machine learning regression system to predict crop yields based on soil elements.",
-    features: [
-      "Numeric parameter inputs for Soil Nitrogen, Phosphorus, Potassium, and Temperature.",
-      "Yield prediction algorithm based on linear regression patterns.",
-      "Historical prediction audit log tracking."
-    ],
-    stack: "Python, Scikit-Learn, Pandas, NumPy",
-    challenges: "Preprocessing messy data tables and handling outlier records before training the model.",
-    learned: "Clean data pipeline setups, evaluating mathematical model accuracy, and translating numerical predictions into visual reports."
+    stack: "JavaScript, SQLite, REST APIs, HTML5, CSS3, PHP",
+    challenges: "Handling conflict resolution and synchronizing local SQLite state when merchant devices regain connectivity.",
+    learned: "Architected offline-first database synchronization workflows, wrote SQLite query procedures, and built mobile-first responsive interfaces."
   },
   rental: {
-    title: "Vehicle Rental System",
-    problem: "Manual fleet schedules lead to double-bookings, reservation clashes, and uncoordinated logistics logs.",
-    solution: "Designed a centralized CRUD portal for fleet coordination, bookings, and audit tracking.",
+    title: "Online Vehicle Rental Management System",
+    problem: "Manual fleet schedules and paper reservation records lead to frequent double-bookings, billing errors, and uncoordinated vehicle returns.",
+    solution: "Built an end-to-end vehicle booking and fleet-management web application with ACID transactional integrity to eliminate scheduling conflicts.",
     features: [
-      "Dynamic real-time fleet availability lookup calendars.",
-      "Online booking form with constraint validation.",
-      "Automated return logs, vehicle status audits, and late fee estimations."
+      "Normalized MySQL database schema with transactional checks that prevent double-booking.",
+      "Dynamic fare engine handling tiered hourly/daily rates, insurance add-ons, and late-return penalties.",
+      "Live administrative dashboard displaying real-time vehicle availability, maintenance logs, and revenue metrics.",
+      "Secure customer reservation portal with instant booking confirmation."
     ],
-    stack: "HTML5, CSS3, JavaScript, SQL",
-    challenges: "Preventing database double-booking transactions for overlapping booking periods.",
-    learned: "Handling transaction locks, writing database queries, and scripting form validations."
+    stack: "PHP, MySQL, Apache, HTML5, CSS3, JavaScript, Bootstrap",
+    challenges: "Preventing race conditions and reservation clashes during simultaneous user booking requests.",
+    learned: "Implemented MySQL table locking and transaction commits, created administrative reporting charts, and enforced server-side input validation."
   }
 };
 
 function openModal(projectId) {
   const proj = projectDetails[projectId];
   if (!proj) return;
-  
   document.getElementById('modal-title').textContent = proj.title;
   document.getElementById('modal-problem').textContent = proj.problem;
   document.getElementById('modal-solution').textContent = proj.solution;
-  
   const featUl = document.getElementById('modal-features');
   featUl.innerHTML = '';
   proj.features.forEach(f => {
@@ -1204,7 +1420,6 @@ function openModal(projectId) {
     li.textContent = f;
     featUl.appendChild(li);
   });
-  
   document.getElementById('modal-stack').textContent = proj.stack;
   document.getElementById('modal-challenges').textContent = proj.challenges;
   document.getElementById('modal-learned').textContent = proj.learned;
@@ -1216,13 +1431,30 @@ function closeModal() {
   document.getElementById('project-modal').classList.remove('open');
 }
 
-function openCaseStudyModal() {
-  document.getElementById('case-study-modal').classList.add('open');
+function openSentinelCaseStudy() {
+  document.getElementById('sentinel-case-study-modal').classList.add('open');
 }
 
-function closeCaseStudyModal() {
-  document.getElementById('case-study-modal').classList.remove('open');
+function closeSentinelCaseStudy() {
+  document.getElementById('sentinel-case-study-modal').classList.remove('open');
 }
+
+function openPrepwiseCaseStudy() {
+  document.getElementById('prepwise-case-study-modal').classList.add('open');
+}
+
+function closePrepwiseCaseStudy() {
+  document.getElementById('prepwise-case-study-modal').classList.remove('open');
+}
+
+// Global escape key to close modals
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal();
+    closeSentinelCaseStudy();
+    closePrepwiseCaseStudy();
+  }
+});
 </script>
 </body>
 </html>
